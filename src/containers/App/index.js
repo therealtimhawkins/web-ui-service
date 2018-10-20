@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Header from '../Header';
 import SearchBar from '../../components/SearchBar';
+import RestaurantList from '../RestaurantList';
 
 class App extends Component {
   state = {
     postcode: '',
-    data: [],
+    restaurantData: [],
   };
 
   updatePostcodeState = (event) => {
@@ -19,10 +20,10 @@ class App extends Component {
     let result = await this.fetchDataFromRestaurantService();
     if (result) {
       this.setState({
-        data: result.data,
+        restaurantData: result.data,
       });
     };
-    console.log(this.state.data);
+    console.log(this.state.restaurantData);
   };
 
   fetchDataFromRestaurantService = async () => {
@@ -44,6 +45,7 @@ class App extends Component {
           onChange={(e) => this.updatePostcodeState(e)}
           onClick={() => this.getRestaurantData() }
         />
+        <RestaurantList restaurantData={this.state.restaurantData} />
       </div>
     );
   };
