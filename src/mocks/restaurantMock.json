@@ -1,0 +1,44 @@
+{
+  "data":
+  {
+    "restuarants": 
+    [
+      {
+        "name": "Eddys Restaurant",
+        "postcode": "E147DX",
+        "coords": [0.01243, 1.00234 ],
+        "rating": 4.7,
+        "servesMeat": false,
+        "averagePrice": 14.50,
+        "dishes":
+        [
+          {
+            "name": "Vegetarian Korma",
+            "price": 9.0,
+            "dietType": "Vegetarian",
+            "ingredients":
+            [
+              "peas",
+              "cauliflower",
+              "cream",
+              "butternut",
+              "rice"
+            ]
+          },
+          {
+            "name": "Butternut Chowder",
+            "price": 9.0,
+            "dietType": "Vegan",
+            "ingredients":
+            [
+              "carrots",
+              "onion",
+              "coconut cream",
+              "butternut"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
