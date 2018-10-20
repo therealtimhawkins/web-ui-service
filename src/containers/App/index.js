@@ -6,25 +6,35 @@ import SearchBar from '../../components/SearchBar';
 class App extends Component {
   state = {
     postcode: '',
+    data: [],
   };
 
   updatePostcodeState = (event) => {
     this.setState({
       postcode: event.target.value, 
     });
-    console.log(this.state.postcode);
   };
 
   getRestaurantData = async () => {
+    let result = await this.fetchDataFromRestaurantService();
+    if (result) {
+      this.setState({
+        data: result.data,
+      });
+    };
+    console.log(this.state.data);
+  };
+
+  fetchDataFromRestaurantService = async () => {
     try {
       let url = `http://localhost:4000/api/restaurants/${this.state.postcode}`;
       let result = await axios.get(url);
-      console.log(result);
       return result;
     } catch {
-      console.log('There was an error retreiving restaurant data...')
+      console.log('There was an error retreiving restaurant data...');
+      return false;
     }
-  }
+  };
 
   render() {
     return (
@@ -37,6 +47,6 @@ class App extends Component {
       </div>
     );
   };
-}
+};
 
 export default App;
