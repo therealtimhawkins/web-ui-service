@@ -15,7 +15,7 @@ class SearchBar extends Component {
 
   getRestaurantData = async () => {
     try {
-      let result = await axios.get(`http://localhost:4000/api/restaurants/${this.state.postcode}`);
+      let result = await axios.get('https://restaurant-data-service.herokuapp.com/api/restaurants/');
       console.log('result');
       return result;
     } catch {
