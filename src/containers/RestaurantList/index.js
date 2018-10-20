@@ -8,7 +8,7 @@ const RestaurantList = (props) => {
 
   const renderedItems = (restaurantData).map((restaurant, index) => (
     <Fragment key={restaurantData._id}>
-      <Restaurant restaurant={restaurant} />
+      <Restaurant restaurantData={restaurant} />
     </Fragment>
   ));
 

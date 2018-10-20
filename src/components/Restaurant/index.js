@@ -1,11 +1,17 @@
 import React from 'react';
 
-const Restaurant = () => (
-  <div>
-    <div>Name: </div>
-    <div>Postcode: </div>
-    <div>Rating: </div>
-  </div>
-)
+const Restaurant = (props) => {
+  const {
+    restaurantData,
+  } = props;
+
+  return (
+    <div>
+      <div>Name: {restaurantData.name}</div>
+      <div>Postcode: {restaurantData.postcode}</div>
+      <div>Rating: {restaurantData.rating}</div>
+    </div>
+  )
+}
 
 export default Restaurant;
