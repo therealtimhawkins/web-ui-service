@@ -1,37 +1,11 @@
-import React, {Component} from 'react';
-import axios from 'axios';
+import React from 'react';
 import './SearchBar.css';
 
-class SearchBar extends Component {
-  state = {
-    postcode: '',
-  };
-
-  updatePostcodeState = (event) => {
-    this.setState({
-      postcode: event.target.value, 
-    });
-  };
-
-  getRestaurantData = async () => {
-    try {
-      let url = `http://localhost:4000/api/restaurants/${this.state.postcode}`;
-      let result = await axios.get(url);
-      console.log(result);
-      return result;
-    } catch {
-      console.log('There was an error retreiving restaurant data...')
-    }
-  }
-
-  render() {
-    return (
-      <div className="searchBar">
-        <input className="searchBarInput" onChange={this.updatePostcodeState}></input>
-        <button className="searchBarButton" onClick={this.getRestaurantData} >Find</button>
-      </div>
-    );
-  };
-};
+const SearchBar = (props) => (
+  <div className="searchBar">
+    <input className="searchBarInput" onChange={props.onChange}></input>
+    <button className="searchBarButton" onClick={props.onClick} >Find</button>
+  </div>
+);
 
 export default SearchBar;
