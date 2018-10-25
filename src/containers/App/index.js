@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Header from '../Header';
+import HeroSection from '../HeroSection';
 import SearchBar from '../../components/SearchBar';
 import RestaurantList from '../RestaurantList';
 
@@ -41,6 +42,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
+        <HeroSection />
         <SearchBar 
           onChange={(e) => this.updatePostcodeState(e)}
           onClick={() => this.getRestaurantData() }

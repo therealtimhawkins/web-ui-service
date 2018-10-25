@@ -1,5 +1,6 @@
 import React, {Fragment} from 'react';
 import Restaurant from '../../components/Restaurant';
+import './RestaurantList.css';
 
 const RestaurantList = (props) => {
   const {
@@ -13,7 +14,7 @@ const RestaurantList = (props) => {
   ));
 
   return (
-    <div>
+    <div className="restaurantList">
       {renderedItems}
     </div>
   );
