@@ -1,6 +1,7 @@
 .searchBar {
   display: flex;
   justify-content: center;
+  padding-bottom: 24px;
 }
 
 .searchBarInput {
@@ -9,7 +10,7 @@
   text-transform: uppercase;
   border: none;
   border-radius: 2px;
-  width: 30%;
+  width: 54%;
 }
 
 .searchBarButton {

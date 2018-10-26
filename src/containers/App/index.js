@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Header from '../Header';
-import HeroSection from '../HeroSection';
+import HeroSection from '../../components/HeroSection';
 import SearchBar from '../../components/SearchBar';
 import RestaurantList from '../RestaurantList';
+import './App.css';
 
 class App extends Component {
   state = {
