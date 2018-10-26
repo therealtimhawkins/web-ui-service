@@ -29,3 +29,8 @@
   background-color: #8cbeaa;
   padding: 12px 12px 10px 12px;
 }
+
+::placeholder { 
+  color: grey;
+  opacity: 0.3; 
+}
