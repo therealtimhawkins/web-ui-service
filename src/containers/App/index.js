@@ -30,7 +30,7 @@ class App extends Component {
 
   fetchDataFromRestaurantService = async () => {
     try {
-      let url = `http://localhost:4000/api/restaurants/${this.state.postcode}`;
+      let url = `https://restaurant-data-service.herokuapp.com/${this.state.postcode}`;
       let result = await axios.get(url);
       return result;
     } catch {
