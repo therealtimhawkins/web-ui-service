@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
-import Restaurant from '../../components/Restaurant';
-import './RestaurantList.css';
+import RestaurantTile from '../../components/RestaurantTile';
+import './RestaurantTileList.css';
 
 const RestaurantList = (props) => {
   const {
@@ -9,7 +9,7 @@ const RestaurantList = (props) => {
 
   const renderedItems = (restaurantData).map((restaurant, index) => (
     <Fragment key={restaurant._id}>
-      <Restaurant restaurantData={restaurant} />
+      <RestaurantTile restaurantData={restaurant} />
     </Fragment>
   ));
 

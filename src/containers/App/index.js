@@ -3,7 +3,7 @@ import axios from 'axios';
 import Header from '../Header';
 import HeroSection from '../../components/HeroSection';
 import SearchBar from '../../components/SearchBar';
-import RestaurantList from '../RestaurantList';
+import RestaurantTileList from '../RestaurantTileList';
 import './App.css';
 
 class App extends Component {
@@ -30,7 +30,7 @@ class App extends Component {
 
   fetchDataFromRestaurantService = async () => {
     try {
-      let url = `https://restaurant-data-service.herokuapp.com/api/restaurants/${this.state.postcode}`;
+      let url = `http://localhost:4000/api/restaurants/${this.state.postcode}`;
       let result = await axios.get(url);
       return result;
     } catch {
@@ -48,7 +48,7 @@ class App extends Component {
           onChange={(e) => this.updatePostcodeState(e)}
           onClick={() => this.getRestaurantData() }
         />
-        <RestaurantList restaurantData={this.state.restaurantData} />
+        <RestaurantTileList restaurantData={this.state.restaurantData} />
       </div>
     );
   };
