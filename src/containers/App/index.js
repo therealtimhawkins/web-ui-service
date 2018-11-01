@@ -10,12 +10,25 @@ class App extends Component {
   state = {
     postcode: '',
     restaurantData: [],
+    heroSectionVisible: true,
   };
 
   updatePostcodeState = (event) => {
     this.setState({
       postcode: event.target.value, 
     });
+  };
+
+  showHideHeroSection = () => {
+    this.setState({
+      heroSectionVisible: !this.state.heroSectionVisible,
+    });
+    console.log(this.state.heroSectionVisible);
+  };
+
+  searchButtonClicked = () => {
+    this.getRestaurantData();
+    this.showHideHeroSection();
   };
 
   getRestaurantData = async () => {
@@ -43,10 +56,10 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <HeroSection />
+        { this.state.heroSectionVisible ? <HeroSection /> : null }
         <SearchBar 
           onChange={(e) => this.updatePostcodeState(e)}
-          onClick={() => this.getRestaurantData() }
+          onClick={() => this.searchButtonClicked() }
         />
         <RestaurantTileList restaurantData={this.state.restaurantData} />
       </div>

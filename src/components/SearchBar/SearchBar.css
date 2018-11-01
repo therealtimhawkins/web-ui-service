@@ -1,7 +1,7 @@
 .searchBar {
   display: flex;
   justify-content: center;
-  padding-bottom: 24px;
+  padding: 24px 0 24px 0;
 }
 
 .searchBarInput {
