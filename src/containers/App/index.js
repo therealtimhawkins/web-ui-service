@@ -37,7 +37,6 @@ class App extends Component {
         restaurantData: result.data,
       });
     };
-    console.log(this.state.restaurantData);
   };
 
   fetchDataFromRestaurantService = async () => {

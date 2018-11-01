@@ -16,6 +16,12 @@ describe('<App />', () => {
     expect(AppTest.find('div').hasClass('App')).toEqual(true);
   });
 
+  it('should contain a Header, HeroSection and SearchBar', () => {
+    expect(AppTest.find('Header').exists()).toEqual(true);
+    expect(AppTest.find('HeroSection').exists()).toEqual(true);
+    expect(AppTest.find('SearchBar').exists()).toEqual(true);
+  });
+
   describe('updatePostcodeState()', () => {
     it('shoud set the postcode state to the event value', () => {
       const event = {
@@ -35,6 +41,16 @@ describe('<App />', () => {
       expect(AppTest.state().heroSectionVisible).toEqual(true);
       AppTest.instance().showHideHeroSection();
       expect(AppTest.state().heroSectionVisible).toEqual(false);
+    });
+  });
+
+  describe('searchButtonClicked()', () => {
+    it('should call getRestaurantData()', () => {
+    });
+  });
+
+  describe('getRestaurantData()', async () => {
+    it('should set the data state to the result from fetchDataFromRestaurantService()', () => {
     });
   });
 });
