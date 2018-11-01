@@ -23,7 +23,6 @@ class App extends Component {
     this.setState({
       heroSectionVisible: !this.state.heroSectionVisible,
     });
-    console.log(this.state.heroSectionVisible);
   };
 
   searchButtonClicked = () => {
