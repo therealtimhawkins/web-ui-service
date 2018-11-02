@@ -1,6 +1,7 @@
 import React from 'react';
 import { configure, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import moxios from 'moxios';
 import App from './';
 
 configure({ adapter: new Adapter()});
@@ -10,6 +11,11 @@ describe('<App />', () => {
 
   beforeEach(() => {
     AppTest = shallow(<App />);
+    moxios.install();
+  });
+
+  afterEach(() => {
+    moxios.uninstall();
   });
 
   it('should contain a div of className="App"', () => {
@@ -46,11 +52,57 @@ describe('<App />', () => {
 
   describe('searchButtonClicked()', () => {
     it('should call getRestaurantData()', () => {
+      const spy = jest.spyOn(AppTest.instance(), 'getRestaurantData');
+      AppTest.update();
+      expect(spy).toHaveBeenCalledTimes(0);
+      AppTest.instance().searchButtonClicked();
+      expect(spy).toHaveBeenCalledTimes(1);
+    });
+
+    it('should call fetchDataFromRestaurantService()', () => {
+      const spy = jest.spyOn(AppTest.instance(), 'fetchDataFromRestaurantService');
+      AppTest.update();
+      expect(spy).toHaveBeenCalledTimes(0);
+      AppTest.instance().searchButtonClicked();
+      expect(spy).toHaveBeenCalledTimes(1);
     });
   });
 
-  describe('getRestaurantData()', async () => {
-    it('should set the data state to the result from fetchDataFromRestaurantService()', () => {
+  describe('getRestaurantData()', () => {
+    it('should set the data state to the result from fetchDataFromRestaurantService()', async () => {
+      const result = {
+        data: 'Test Data'
+      };
+      AppTest.instance().fetchDataFromRestaurantService = jest.fn(async () => result)
+      await AppTest.instance().getRestaurantData();
+      expect(AppTest.state().restaurantData).toEqual('Test Data');
+    });
+  });
+
+  describe('fetchDataFromRestaurantService', () => {
+    it('should return the result of a successful api call', async () => {
+      moxios.stubRequest('http://testingurl.com/api/api/restaurants/', {
+        status: 200,
+        responseText: 'Test Data'
+      });
+
+      const result = await AppTest.instance().fetchDataFromRestaurantService();
+      expect(result.data).toEqual('Test Data');
+    });
+
+    it('should log an error on an unsuccessful api call', async () => {
+      moxios.stubRequest('http://testingurl.com/api/api/restaurants/', {
+        status: 500,
+        responseText: 'Error'
+      });
+
+      const result = await AppTest.instance().fetchDataFromRestaurantService();
+      expect(result).toEqual(false);
+    });
+  });
+
+  describe('<SearchBar /> props()', () => {
+    it('should be passed updatePostcodeState(e) as the onChange prop', () => {
     });
   });
 });
