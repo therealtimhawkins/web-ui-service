@@ -13,6 +13,5 @@ describe('<Header />', () => {
   });
 
   it('', () => {
-    console.log('test');
   });
 });

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import config from 'config';
 import Header from '../Header';
 import HeroSection from '../../components/HeroSection';
 import SearchBar from '../../components/SearchBar';
@@ -41,8 +40,10 @@ class App extends Component {
   };
 
   fetchDataFromRestaurantService = async () => {
+    const restaurantApiUrl = process.env.REACT_APP_RESTAURANT_API_URL;
+    console.log(restaurantApiUrl);
     try {
-      let url = `${config.get('restaurant-data-service-url')}${this.state.postcode}`;
+      let url = `${restaurantApiUrl}${this.state.postcode}`;
       let result = await axios.get(url);
       return result;
     } catch {
