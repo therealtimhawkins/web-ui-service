@@ -34,14 +34,13 @@ class App extends Component {
     let result = await this.fetchDataFromRestaurantService();
     if (result) {
       this.setState({
-        restaurantData: result.data,
+        restaurantData: result.data.data.restaurants,
       });
     };
   };
 
   fetchDataFromRestaurantService = async () => {
     const restaurantApiUrl = process.env.REACT_APP_RESTAURANT_API_URL;
-    console.log(restaurantApiUrl);
     try {
       let url = `${restaurantApiUrl}${this.state.postcode}`;
       let result = await axios.get(url);
