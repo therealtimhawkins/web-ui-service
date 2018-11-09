@@ -7,14 +7,17 @@ class RestaurantContainer extends Component {
   };
 
   tileClicked = () => {
-    console.log('restaurant has been clicked');
-  }
+    this.setState({
+      restaurantSelected: !this.state.restaurantSelected
+    });
+    console.log(this.state.restaurantSelected);
+  };
 
   render() {
     return (
       <RestaurantTileList restaurantData={this.props.restaurantData} tileClicked={() => this.tileClicked()}/>
-    )
-  }
-}
+    );
+  };
+};
 
 export default RestaurantContainer;
