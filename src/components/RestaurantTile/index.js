@@ -13,7 +13,7 @@ const Restaurant = (props) => {
   return (
     <div className="restaurant">
       <div className="imageContainer">
-        <button onClick={() => onClick}>
+        <button onClick={() => onClick()}>
           <img 
             src="images/food/mexican-tile.jpg" 
             alt={restaurantData.name} 

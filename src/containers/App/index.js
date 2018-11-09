@@ -3,7 +3,7 @@ import axios from 'axios';
 import Header from '../Header';
 import HeroSection from '../../components/HeroSection';
 import SearchBar from '../../components/SearchBar';
-import RestaurantTileList from '../RestaurantTileList';
+import RestaurantContainer from '../RestaurantContainer';
 import './App.css';
 
 class App extends Component {
@@ -60,7 +60,7 @@ class App extends Component {
           onChange={(e) => this.updatePostcodeState(e)}
           onClick={() => this.searchButtonClicked() }
         />
-        <RestaurantTileList restaurantData={this.state.restaurantData} />
+        <RestaurantContainer restaurantData={this.state.restaurantData} />
       </div>
     );
   };
