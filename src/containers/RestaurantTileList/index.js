@@ -5,11 +5,12 @@ import './RestaurantTileList.css';
 const RestaurantList = (props) => {
   const {
     restaurantData,
+    tileClicked,
   } = props;
 
   const renderedItems = (restaurantData).map((restaurant, index) => (
     <Fragment key={restaurant._id}>
-      <RestaurantTile restaurantData={restaurant} />
+      <RestaurantTile restaurantData={restaurant} tileClicked={() => tileClicked()}/>
     </Fragment>
   ));
 

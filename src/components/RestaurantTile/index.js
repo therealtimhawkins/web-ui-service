@@ -4,16 +4,13 @@ import './RestaurantTile.css';
 const Restaurant = (props) => {
   const {
     restaurantData,
+    tileClicked,
   } = props;
-
-  const onClick = () => {
-    console.log('working');
-  };
 
   return (
     <div className="restaurant">
       <div className="imageContainer">
-        <button onClick={() => onClick()}>
+        <button onClick={tileClicked}>
           <img 
             src="images/food/mexican-tile.jpg" 
             alt={restaurantData.name} 
