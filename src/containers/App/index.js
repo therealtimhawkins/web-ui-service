@@ -34,7 +34,7 @@ class App extends Component {
     let result = await this.fetchDataFromRestaurantService();
     if (result) {
       this.setState({
-        restaurantData: result.data.data.restaurants,
+        restaurantData: result.data,
       });
     };
   };
@@ -44,6 +44,7 @@ class App extends Component {
     try {
       let url = `${restaurantApiUrl}${this.state.postcode}`;
       let result = await axios.get(url);
+      console.log(result);
       return result;
     } catch {
       console.log('There was an error retreiving restaurant data...');

@@ -1,28 +1,31 @@
-import React from 'react';
+import React, {Component} from 'react';
+import DishList from '../../containers/DishesList';
 import './RestaurantTile.css';
 
-const Restaurant = (props) => {
-  const {
-    restaurantData,
-    tileClicked,
-  } = props;
+class Restaurant extends Component {
+  state = {
+    dishesVisible: false
+  };
 
-  return (
-    <div className="restaurant">
-      <div className="imageContainer">
-        <button onClick={tileClicked}>
-          <img 
-            src="images/food/mexican-tile.jpg" 
-            alt={restaurantData.name} 
-            className="restaurantImage"
-          />
+  dishButtonClicked = () => {
+    this.setState({
+      dishesVisible: !this.state.dishesVisible
+    });
+    console.log(this.state.dishesVisible);
+  };
+
+  render() {
+    return (
+      <div className="restaurant">
+        <div>{this.props.restaurantData.name}</div>
+        <div>{this.props.restaurantData.postcode}</div>
+        <button className="dishButton" onClick={() => this.dishButtonClicked()} >
+          {this.props.restaurantData.dishes.length}
         </button>
-        <div className="name">{restaurantData.name}</div>
+        { this.state.dishesVisible ? <DishList dishData={this.props.restaurantData.dishes} /> : null }
       </div>
-      <div>{restaurantData.postcode}</div>
-      <div>{restaurantData.rating}</div>
-    </div>
-  );
+    );
+  }
 };
 
 export default Restaurant;
