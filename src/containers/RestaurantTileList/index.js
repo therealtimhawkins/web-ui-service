@@ -10,10 +10,7 @@ const RestaurantList = (props) => {
 
   const renderedItems = (restaurantData).map((restaurant, index) => (
     <Fragment key={restaurant._id}>
-      { restaurant.dishes.length >= 0 ?
-        <RestaurantTile restaurantData={restaurant} />
-        : null 
-      }
+      <RestaurantTile restaurantData={restaurant} />
     </Fragment>
   ));
 
