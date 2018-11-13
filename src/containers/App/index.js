@@ -3,13 +3,13 @@ import axios from 'axios';
 import Header from '../Header';
 import HeroSection from '../../components/HeroSection';
 import SearchBar from '../../components/SearchBar';
+import RestaurantHeader from '../../components/RestaurantHeader';
 import RestaurantContainer from '../RestaurantContainer';
 import './App.css';
 
 class App extends Component {
   state = {
     postcode: '',
-    restaurantData: [],
     heroSectionVisible: true,
   };
 
@@ -20,9 +20,11 @@ class App extends Component {
   };
 
   showHideHeroSection = () => {
-    this.setState({
-      heroSectionVisible: !this.state.heroSectionVisible,
-    });
+    if (this.state.heroSectionVisible) {
+      this.setState({
+        heroSectionVisible: !this.state.heroSectionVisible,
+      });
+    };
   };
 
   searchButtonClicked = () => {
@@ -61,7 +63,16 @@ class App extends Component {
           onChange={(e) => this.updatePostcodeState(e)}
           onClick={() => this.searchButtonClicked() }
         />
-        <RestaurantContainer restaurantData={this.state.restaurantData} />
+        { this.state.restaurantData ?
+          <div>
+            <RestaurantHeader 
+              restaurantData={this.state.restaurantData} 
+              postcode={this.state.postcode} 
+            />
+            <RestaurantContainer restaurantData={this.state.restaurantData} /> 
+          </div>
+          : null 
+        }
       </div>
     );
   };
