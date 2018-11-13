@@ -1,0 +1,30 @@
+.dishTile {
+  margin: 8px 0 8px 0;
+  padding: 8px;
+  width: 94%;
+  border: solid 1px #8cbeaa;
+}
+
+.dishTileVegan {
+  margin: 8px 0 8px 0;
+  padding: 8px;
+  width: 94%;
+  background-color: #8cbeaa;
+  color: #fff;
+}
+
+.dishName {
+  font-weight: 600;
+}
+
+.dishDescription {
+  font-size: small;
+}
+
+.dishPrice {
+  font-weight: 600;
+}
+
+.dishVegan {
+  font-weight: 600;
+}

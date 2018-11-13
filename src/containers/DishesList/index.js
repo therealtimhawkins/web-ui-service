@@ -1,5 +1,6 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import DishTile from '../../components/DishTile';
+import './DishList.css';
 
 const DishesList = (props) => {
   const {
@@ -7,10 +8,10 @@ const DishesList = (props) => {
   } = props;
 
   const renderedDishes = (dishData).map((dish, index) => (
-    <Fragment key={index}>
+    <div className="dishList" key={index}>
       {/* <button onClick={tileClicked}></button> */}
       <DishTile dishData={dish} />
-    </Fragment>
+    </div>
   ));
 
   return(

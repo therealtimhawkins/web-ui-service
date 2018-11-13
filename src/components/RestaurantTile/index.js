@@ -11,7 +11,6 @@ class Restaurant extends Component {
     this.setState({
       dishesVisible: !this.state.dishesVisible
     });
-    console.log(this.state.dishesVisible);
   };
 
   render() {
