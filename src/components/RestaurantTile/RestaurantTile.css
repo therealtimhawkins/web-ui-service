@@ -1,7 +1,9 @@
 .restaurant {
-  padding: 24px 24px 0px 24px;
+  padding: 24px 24px 12px 24px;
   color: #000;
   background-color: #fff;
+  border: solid 1px #f0f2eb;
+  margin: 8px;
 }
 
 .dishButton {
