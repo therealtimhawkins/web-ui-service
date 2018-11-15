@@ -7,4 +7,5 @@
 .logoButton {
   border: none;
   background-color: none;
+  -webkit-tap-highlight-color: transparent;
 }
