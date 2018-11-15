@@ -7,7 +7,7 @@ const DishTile = (props) => {
   } = props;
 
   return (
-    <div className={dishData.vegan ? 'dishTileVegan' : 'dishTile' }>
+    <div className={ dishData.vegan ? 'dishTileVegan' : 'dishTile' }>
       <div className="dishName" >{dishData.name}</div>
       <div className="dishDescription" >{dishData.description}</div>
       <div className="dishPrice" >{dishData.price}</div>

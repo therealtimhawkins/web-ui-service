@@ -3,3 +3,7 @@
   justify-content: space-around;
   background-color: #fff;
 }
+
+.logoButton {
+  border: none;
+}

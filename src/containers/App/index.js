@@ -13,6 +13,14 @@ class App extends Component {
     heroSectionVisible: true,
   };
 
+  refreshHomepage = () => {
+    this.setState({
+      postcode: '',
+      heroSectionVisible: true,
+      restaurantData: null,
+    });
+  };
+
   updatePostcodeState = (event) => {
     this.setState({
       postcode: event.target.value, 
@@ -57,7 +65,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header logoOnClick={() => this.refreshHomepage()} />
         { this.state.heroSectionVisible ? <HeroSection /> : null }
         <SearchBar 
           onChange={(e) => this.updatePostcodeState(e)}

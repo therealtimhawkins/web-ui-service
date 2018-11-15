@@ -3,7 +3,6 @@ import './Logo.css';
 
 const Logo = () => (
   <div>
-    <img src="images/logo/logoCarrotOrange.svg" className="logoCarrot" alt="logoCarrot" />
     <img src="images/logo/logoVegitableOrange.svg" className="logoVegitable" alt="logoVegitable" />
   </div>
 );
