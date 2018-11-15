@@ -3,6 +3,7 @@ import axios from 'axios';
 import Header from '../Header';
 import HeroSection from '../../components/HeroSection';
 import SearchBar from '../../components/SearchBar';
+import LoadingBar from '../../components/LoadingBar';
 import RestaurantHeader from '../../components/RestaurantHeader';
 import RestaurantContainer from '../RestaurantContainer';
 import './App.css';
@@ -66,6 +67,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header logoOnClick={() => this.refreshHomepage()} />
+        <LoadingBar />
         { this.state.heroSectionVisible ? <HeroSection /> : null }
         <SearchBar 
           onChange={(e) => this.updatePostcodeState(e)}

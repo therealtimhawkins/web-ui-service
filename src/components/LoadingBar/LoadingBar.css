@@ -1,0 +1,26 @@
+.loadingBarContainer {
+  height: 60px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.loadingBar {
+  background-color: #fff;
+  margin: 22px;
+  height: 20px;
+  display: inline-block;
+  width: 60px;
+}
+
+.dotContainer {
+  display: flex;
+  align-items: flex-end;
+}
+
+.dot {
+  background-color: #f09027;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+}
