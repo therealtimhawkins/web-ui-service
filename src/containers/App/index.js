@@ -67,12 +67,15 @@ class App extends Component {
     return (
       <div className="App">
         <Header logoOnClick={() => this.refreshHomepage()} />
-        <LoadingBar />
         { this.state.heroSectionVisible ? <HeroSection /> : null }
         <SearchBar 
           onChange={(e) => this.updatePostcodeState(e)}
           onClick={() => this.searchButtonClicked() }
         />
+        { !this.state.restaurantData && !this.state.heroSectionVisible ? 
+          <LoadingBar /> :
+          null
+        }
         { this.state.restaurantData ?
           <div>
             <RestaurantHeader 
