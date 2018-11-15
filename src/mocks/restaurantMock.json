@@ -1,82 +1,301 @@
 {
-  "data":
-  {
-    "restaurants": 
-    [
+  "_id": {
+      "$oid": "5be9f83f773a0664a6fe8392"
+  },
+  "coords": [
+      1,
+      2
+  ],
+  "dishes": [
       {
-        "_id": "asfdkljaslkfe",
-        "name": "Eddys Restaurant",
-        "postcode": "E147DX",
-        "coords": [0.01243, 1.00234 ],
-        "rating": 4.7,
-        "servesMeat": false,
-        "averagePrice": 14.50,
-        "dishes":
-        [
-          {
-            "name": "Vegetarian Korma",
-            "price": 9.0,
-            "dietType": "Vegetarian",
-            "ingredients":
-            [
-              "peas",
-              "cauliflower",
-              "cream",
-              "butternut",
-              "rice"
-            ]
-          },
-          {
-            "name": "Butternut Chowder",
-            "price": 9.0,
-            "dietType": "Vegan",
-            "ingredients":
-            [
-              "carrots",
-              "onion",
-              "coconut cream",
-              "butternut"
-            ]
-          }       
-        ]
+          "name": "Vegan Futari Platter",
+          "description": "6 Cucumber Maki, 6 Avocado Maki, 2 Aubergine Nigiri, 2 Avocado Nigiri, 2 Inari Taco, 10 Yasai Roll",
+          "price": "£10.50",
+          "vegan": true
       },
       {
-        "_id": "asfdkljaslkfe",
-        "name": "Eddys Restaurant",
-        "postcode": "E147DX",
-        "coords": [0.01243, 1.00234 ],
-        "rating": 4.7,
-        "servesMeat": false,
-        "averagePrice": 14.50,
-        "dishes":
-        [
-          {
-            "name": "Vegetarian Korma",
-            "price": 9.0,
-            "dietType": "Vegetarian",
-            "ingredients":
-            [
-              "peas",
-              "cauliflower",
-              "cream",
-              "butternut",
-              "rice"
-            ]
-          },
-          {
-            "name": "Butternut Chowder",
-            "price": 9.0,
-            "dietType": "Vegan",
-            "ingredients":
-            [
-              "carrots",
-              "onion",
-              "coconut cream",
-              "butternut"
-            ]
-          }       
-        ]
+          "name": "Vegan Box",
+          "description": "2 Cucumber Maki, 2 Avocado Maki, 1 Avocado Nigiri, 3 Yasai Roll, 1 Inari Taco, 1 Aubergine Nigiri",
+          "price": "£5.45",
+          "vegan": true
+      },
+      {
+          "name": "Maki Box",
+          "description": "8 Salmon Maki, 8 Avocado Maki",
+          "price": "£5.45"
+      },
+      {
+          "name": "Salmon Box",
+          "description": "5 Salmon Nigiri, 5 Salmon Maki",
+          "price": "£5.95"
+      },
+      {
+          "name": "Salmon & Avocado Box",
+          "description": "5 Salmon Nigiri, 5 Avocado Maki",
+          "price": "£5.95"
+      },
+      {
+          "name": "Large Salmon Box",
+          "description": "4 Salmon Nigiri, 4 Salmon Maki, 3 Salmon Sashimi, 2 YO! Roll, Wakame, Lemon, Cress",
+          "price": "£7.95"
+      },
+      {
+          "name": "Yasai Roll",
+          "description": "6 inari, avocado, cucumber, cos lettuce and carrot rolls, topped with teriyaki & vegan mayo",
+          "price": "£5.95",
+          "vegan": true
+      },
+      {
+          "name": "Kickin' Salmon Roll",
+          "description": "6 salmon, avocado, cream cheese and cucumber rolls in Korean red pepper powder. Topped with crispy onions & Sriracha mayo",
+          "price": "£5.95"
+      },
+      {
+          "name": "YO! Roll",
+          "description": "6 of our signature rolls! Fresh salmon, avocado & mayo, rolled in orange masago",
+          "price": "£5.95"
+      },
+      {
+          "name": "Crunchy California Roll",
+          "description": "6 surimi and avocado sesame rolls, topped with mayo, teriyaki & crunchy onion",
+          "price": "£5.95"
+      },
+      {
+          "name": "Salmon Sashimi",
+          "description": "5 of our freshest cuts of thick-sliced salmon, with wakame seaweed & lemon",
+          "price": "£5.50"
+      },
+      {
+          "name": "Veggie",
+          "description": "Cucumber, inari & avocado with vegan mayo & toasted sesame seeds, wrapped in a nori rice cone",
+          "price": "£2.30",
+          "vegan": true
+      },
+      {
+          "name": "California Temaki",
+          "description": "Surimi, avocado, mayo & toasted sesame seeds in a nori rice cone",
+          "price": "£4.00"
+      },
+      {
+          "name": "Salmon & Avocado Temaki",
+          "description": "Fresh salmon, avocado, mayo and toasted sesame seeds in a nori rice cone",
+          "price": "£4.50"
+      },
+      {
+          "name": "Avocado Maki",
+          "description": "6 avocado & vegan mayo rolls wrapped in nori",
+          "price": "£2.30",
+          "vegan": true
+      },
+      {
+          "name": "Cucumber Maki",
+          "description": "6 crunchy cucumber with toasted sesame seeds in a nori roll",
+          "price": "£2.30"
+      },
+      {
+          "name": "Salmon Nigiri",
+          "description": "3 fresh, hand cut salmon slices on sushi rice",
+          "price": "£3.20"
+      },
+      {
+          "name": "Edamame",
+          "description": "Succulent edamame in their pods. Sprinkled with sea salt flakes & spring onion",
+          "price": "£2.30"
+      },
+      {
+          "name": "Kaiso Seaweed",
+          "description": "Marinated mixed seaweed, edamame & carrot in a delicious su-miso dressing",
+          "price": "£3.00"
+      },
+      {
+          "name": "Tenderstem & Sesame",
+          "description": "Steamed tenderstem broccoli, served with a rich sesame sauce.",
+          "price": "£3.50"
+      },
+      {
+          "name": "Vegan Platter",
+          "description": "28 Yasai Roll, 28 Cucumber Maki, 20 Avocado Maki, 4 Inari Taco, 4 Aubergine Nigiri, 4 Avocado Nigiri",
+          "price": "£30.00",
+          "vegan": true
+      },
+      {
+          "name": "Tofu Katsu Curry",
+          "description": null,
+          "price": "£9.50"
+      },
+      {
+          "name": "Pumpkin Katsu Curry",
+          "description": null,
+          "price": "£9.50"
+      },
+      {
+          "name": "Prawn Katsu Curry",
+          "description": null,
+          "price": "£9.50"
+      },
+      {
+          "name": "Vegetable Yakisoba",
+          "description": "Vegetables stir-fried with fresh yakisoba noodles, in a tangy sauce",
+          "price": "£4.35"
+      },
+      {
+          "name": "Fried Rice",
+          "description": "Fresh vegetables stir-fried with seasoned sushi rice & shichimi chilli powder",
+          "price": "£4.95"
+      },
+      {
+          "name": "Mushroom Ramen",
+          "description": "Fresh noodles in vegetable broth, topped with sautéed shiitake mushrooms, tofu & pak choi. Topped with pickled onions",
+          "price": "£5.25"
+      },
+      {
+          "name": "Spicy Seafood Ramen",
+          "description": "Prawns, salmon, squid and vegetables in a hot and spicy kimchi broth served with fresh ramen noodles",
+          "price": "£5.45"
+      },
+      {
+          "name": "Shiitake Mushroom Burger",
+          "description": "Braised slices of  shiitake mushroom in teriyaki sauce, served with cucumber & pickled red onion in a steamed bao burger bun",
+          "price": "£4.00"
+      },
+      {
+          "name": "Miso Soup",
+          "description": "Miso is a light soup with wakame, spring onion and tofu. Heathly & delicious it, it goes with every meal.",
+          "price": "£2.30"
+      },
+      {
+          "name": "Furikake Fries",
+          "description": "Japanese style fries coated in sriracha mayo & sprinkled with sesame, aonori & smoky bonito flakes.",
+          "price": "£3.00"
+      },
+      {
+          "name": "Stir Fried Pak Choi & Garlic",
+          "description": "Stir-fried baby pak choi, with garlic, ginger, soy & sesame oil",
+          "price": "£4.00"
+      },
+      {
+          "name": "Sauce",
+          "description": null,
+          "price": "£0.30"
+      },
+      {
+          "name": "Chilli Crackers",
+          "description": null,
+          "price": "£1.50"
+      },
+      {
+          "name": "Chilli Peanuts",
+          "description": null,
+          "price": "£1.50"
+      },
+      {
+          "name": "Wasabi Peas",
+          "description": null,
+          "price": "£1.50"
+      },
+      {
+          "name": "Hakushika Ginjou 13.5%",
+          "description": "Gentle and fruity saké",
+          "price": "£7.00"
+      },
+      {
+          "name": "Custard Dorayaki",
+          "description": "Japanese pancakes sandwiched with a delicious custard",
+          "price": "£3.50"
+      },
+      {
+          "name": "Chocolate Mochi",
+          "description": "Chocolate truffle ganache in a light mochi rice casing. A must try!",
+          "price": "£3.50"
+      },
+      {
+          "name": "Strawberry Cheesecake Mochi",
+          "description": "Bites of creamy strawberry cheesecake, in a light mochi rice casing",
+          "price": "£3.50"
+      },
+      {
+          "name": "Chocolate Brownie",
+          "description": "Indulgent chocolate brownie topped with a salted caramel sauce",
+          "price": "£3.50"
+      },
+      {
+          "name": "Fresh Fruit",
+          "description": "A refreshing mix of watermelon, pineapple  strawberries & grapes",
+          "price": "£3.50"
+      },
+      {
+          "name": "Ramune Soda",
+          "description": null,
+          "price": "£3.10"
+      },
+      {
+          "name": "Aloe Vera Drink",
+          "description": null,
+          "price": "£2.90"
+      },
+      {
+          "name": "Kombucha Kat",
+          "description": null,
+          "price": "£3.45"
+      },
+      {
+          "name": "Cawston Press Sparkling Rhubarb",
+          "description": null,
+          "price": "£2.90"
+      },
+      {
+          "name": "Cawston Press Ginger Beer",
+          "description": null,
+          "price": "£2.90"
+      },
+      {
+          "name": "Coke",
+          "description": null,
+          "price": "£2.05"
+      },
+      {
+          "name": "Diet Coke",
+          "description": null,
+          "price": "£1.95"
+      },
+      {
+          "name": "Coke Zero",
+          "description": null,
+          "price": "£1.95"
+      },
+      {
+          "name": "Sprite",
+          "description": null,
+          "price": "£1.95"
+      },
+      {
+          "name": "Dash Lemon",
+          "description": null,
+          "price": "£2.90"
+      },
+      {
+          "name": "Still Water",
+          "description": null,
+          "price": "£1.40"
+      },
+      {
+          "name": "Sparkling Water",
+          "description": null,
+          "price": "£1.40"
+      },
+      {
+          "name": "Asahi 5%",
+          "description": "Super crisp. Super dry (330ml, 5%)",
+          "price": "£4.10"
+      },
+      {
+          "name": "New Yokai Pale Ale",
+          "description": "From The Wild Beer Co., the perfect complement to Japanese food (330ml, 4.5%)",
+          "price": "£4.95"
       }
-    ]
-  }
+  ],
+  "name": "YO! Sushi - St Pauls",
+  "postcode": "EC4M 8AY",
+  "rating": 10,
+  "__v": 0
 }
