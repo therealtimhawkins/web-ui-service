@@ -22,7 +22,7 @@
   border: solid 1px #f0f2eb;
 }
 
-button {
+.buttonSelected {
   border: solid 2px #8cbeaa;
   background: none;
   text-decoration: none;
@@ -34,15 +34,23 @@ button {
   margin: 6px 2px 10px 2px;
   cursor: pointer;
   box-sizing: border-box;
-}
-
-.buttonSelected {
   color: #fff;
   background-color: #8cbeaa;
   padding: 12px 12px 10px 12px;
 }
 
 .buttonUnselected {
+  border: solid 2px #8cbeaa;
+  background: none;
+  text-decoration: none;
+  border-radius: 2px;
+  font-family: 'Hind', sans-serif; 
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 6px 2px 10px 2px;
+  cursor: pointer;
+  box-sizing: border-box;
   color: #8cbeaa;
   background-color: #fff;
   padding: 12px 12px 10px 12px;
