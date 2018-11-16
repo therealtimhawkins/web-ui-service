@@ -73,8 +73,8 @@ class App extends Component {
           onClick={() => this.searchButtonClicked() }
         />
         { !this.state.restaurantData && !this.state.heroSectionVisible ? 
-          <LoadingBar /> :
-          null
+          <LoadingBar /> 
+          : null
         }
         { this.state.restaurantData ?
           <div>
