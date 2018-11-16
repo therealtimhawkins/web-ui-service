@@ -4,13 +4,18 @@ import './DishList.css';
 
 const DishesList = (props) => {
   const {
-    dishData
+    dishData,
+    veganOnly,
   } = props;
 
   const renderedDishes = (dishData).map((dish, index) => (
     <div className="dishList" key={index}>
-      {/* <button onClick={tileClicked}></button> */}
-      <DishTile dishData={dish} />
+      { veganOnly ? 
+          dish.vegan ?
+          <DishTile dishData={dish} />
+          : null 
+        : <DishTile dishData={dish} />}
+      
     </div>
   ));
 

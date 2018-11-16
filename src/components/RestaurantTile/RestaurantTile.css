@@ -22,8 +22,8 @@
   border: solid 1px #f0f2eb;
 }
 
-.dishButton {
-  border: none;
+button {
+  border: solid 2px #8cbeaa;
   background: none;
   text-decoration: none;
   border-radius: 2px;
@@ -31,11 +31,19 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
-  margin: 6px 0 10px;
-  width: 64px;
+  margin: 6px 2px 10px 2px;
   cursor: pointer;
   box-sizing: border-box;
+}
+
+.buttonSelected {
   color: #fff;
   background-color: #8cbeaa;
+  padding: 12px 12px 10px 12px;
+}
+
+.buttonUnselected {
+  color: #8cbeaa;
+  background-color: #fff;
   padding: 12px 12px 10px 12px;
 }

@@ -4,13 +4,23 @@ import './RestaurantTile.css';
 
 class Restaurant extends Component {
   state = {
-    dishesVisible: false
+    dishesVisible: false,
+    veganClicked: false,
+    vegetarianClicked: false,
   };
 
-  dishButtonClicked = () => {
+  veganButtonClicked = () => {
     this.setState({
-      dishesVisible: !this.state.dishesVisible
+      veganClicked: !this.state.veganClicked
     });
+    console.log(this.state.veganClicked);
+  };
+
+  vegetarianButtonClicked = () => {
+    this.setState({
+      vegetarianClicked: !this.state.vegetarianClicked
+    });
+    console.log(this.state.vegetarianClicked);
   };
 
   render() {
@@ -33,10 +43,23 @@ class Restaurant extends Component {
           </div>
         </div>
 
-        <button className="dishButton" onClick={() => this.dishButtonClicked()} >
-          {this.props.restaurantData.dishes.length}
+        <button className={ this.state.veganClicked ?
+          "buttonSelected"
+          : "buttonUnselected"
+        } onClick={() => this.veganButtonClicked()} >
+          Vegan
         </button>
-        { this.state.dishesVisible ? <DishList dishData={this.props.restaurantData.dishes} /> : null }
+        <button className={ this.state.vegetarianClicked ?
+          "buttonSelected"
+          : "buttonUnselected"
+        } onClick={() => this.vegetarianButtonClicked()} >
+          Vegetarian
+        </button>
+        { this.state.veganClicked || this.state.vegetarianClicked ? 
+        <DishList 
+          dishData={this.props.restaurantData.dishes} 
+          veganOnly={ this.state.veganClicked && !this.state.vegetarianClicked} /> 
+        : null }
       </div>
     );
   }
