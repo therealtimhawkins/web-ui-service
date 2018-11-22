@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './RestaurantHeader.css';
 
 const RestaurantHeader = (props) => {
@@ -8,5 +9,9 @@ const RestaurantHeader = (props) => {
     </div>
   );
 };
+
+RestaurantHeader.propTypes = {
+  postcode: PropTypes.string,
+}
 
 export default RestaurantHeader;
