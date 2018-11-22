@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './DishTile.css';
 
 const DishTile = (props) => {
@@ -15,5 +16,9 @@ const DishTile = (props) => {
     </div>
   )
 };
+
+DishTile.propTypes = {
+  dishData: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.bool])),
+}
 
 export default DishTile;
