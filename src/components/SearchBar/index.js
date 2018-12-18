@@ -1,4 +1,6 @@
 import React from 'react';
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './SearchBar.css';
 
 const SearchBar = (props) => (
@@ -6,7 +8,9 @@ const SearchBar = (props) => (
     <input className="searchBarInput" type="text" placeholder="e.g. E14 7DX" 
       onChange={props.onChange}
       onFocus={props.onChange}></input>
-    <button className="searchBarButton" onClick={props.onClick} >Find</button>
+    <button className="searchBarButton" onClick={props.onClick} >     
+      <FontAwesomeIcon icon={faSearch} />
+    </button>
   </div>
 );
 

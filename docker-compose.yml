@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  web-ui-service:
+    container_name: web-ui-service
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/usr/src/app'
+      - '/usr/src/app/node_modules'
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - restaurant-data-service
+
+  restaurant-data-service:
+    image: timhaydenhawkins/restaurant-data-service
+    environment:
+      - CORSHEADER="http://172.28.1.1:3000"
+      - PROXY=true
+    ports:
+      - 3001:3001
+
+  

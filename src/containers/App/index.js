@@ -6,6 +6,7 @@ import SearchBar from '../../components/SearchBar';
 import LoadingBar from '../../components/LoadingBar';
 import RestaurantHeader from '../../components/RestaurantHeader';
 import RestaurantContainer from '../RestaurantContainer';
+import Map from '../Map';
 import './App.css';
 
 class App extends Component {
@@ -86,6 +87,7 @@ class App extends Component {
           </div>
           : null 
         }
+        <Map />
       </div>
     );
   };

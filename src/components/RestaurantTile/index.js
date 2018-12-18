@@ -69,7 +69,7 @@ class Restaurant extends Component {
 Restaurant.propTypes = {
   restaurantData: PropTypes.objectOf(
     PropTypes.oneOfType(
-      [PropTypes.object, PropTypes.string, PropTypes.bool])),
+      [PropTypes.object, PropTypes.array, PropTypes.string, PropTypes.bool])),
 }
 
 export default Restaurant;

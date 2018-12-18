@@ -2,6 +2,8 @@
   display: flex;
   justify-content: center;
   padding: 24px 0 24px 0;
+  background-image: linear-gradient(to top left, #f09027, #f4ae62);
+
 }
 
 .searchBarInput {
