@@ -87,7 +87,10 @@ class App extends Component {
           </div>
           : null 
         }
-        <Map />
+        { this.state.heroSectionVisible ? 
+          <Map /> 
+          : null
+        }
       </div>
     );
   };
