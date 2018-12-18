@@ -30,7 +30,7 @@ class Restaurant extends Component {
       <div className="restaurant">
         <div className="restaurantName" >{this.props.restaurantData.name}</div>
 
-        <RestaurantInfo restaurantData={this.props.restaurantData}/>
+        <RestaurantInfo restaurantData={this.props.restaurantData} tileClicked={this.props.tileClicked}/>
 
         <button className={ this.state.veganClicked ?
           "buttonSelected"

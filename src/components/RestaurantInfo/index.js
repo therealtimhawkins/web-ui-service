@@ -9,11 +9,11 @@ const RestaurantInfo = (props) => {
       <div>{props.restaurantData.rating}</div>
       <FontAwesomeIcon className='icon' icon={faStar} />
     </div>
-    <button className='mapButton' onClick={() => console.log('test is working')}>            
-    <div className="locationContainer">
-        <div>{props.restaurantData.postcode}</div>
-        <FontAwesomeIcon className='icon' icon={faMapMarkerAlt} />
-    </div>
+    <button className='mapButton' onClick={() => props.tileClicked()}>            
+      <div className="locationContainer">
+          <div>{props.restaurantData.postcode}</div>
+          <FontAwesomeIcon className='icon' icon={faMapMarkerAlt} />
+      </div>
     </button>
     <div className="iconContainer">
       <div>{props.restaurantData.dishes.length}</div>
