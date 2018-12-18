@@ -22,6 +22,25 @@
   border: solid 1px #f0f2eb;
 }
 
+.mapButton {
+  flex-grow: 1;
+  margin: 8px 4px 8px 4px;
+  padding: 4px 0 0 0;
+  border: solid 1px #f0f2eb;
+}
+
+.locationContainer {
+  border: none;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+
+.icon {
+  height: 16px;
+  width: 16px;
+}
+
 .buttonSelected {
   border: solid 2px #8cbeaa;
   background: none;

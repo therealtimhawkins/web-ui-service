@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { faMapMarkerAlt, faUtensilSpoon, faStar } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import DishList from '../../containers/DishesList';
 import './RestaurantTile.css';
 
@@ -28,19 +30,24 @@ class Restaurant extends Component {
     return (
       <div className="restaurant">
         <div className="restaurantName" >{this.props.restaurantData.name}</div>
-
         <div className="ratingContainer">
           <div className="iconContainer" >
             <div>{this.props.restaurantData.rating}</div>
-            <img src="images/icons/star-orange.png" className="" alt="star" />
+            <FontAwesomeIcon className='icon' icon={faStar} />
           </div>
-          <div className="iconContainer">
-            <div>{this.props.restaurantData.postcode}</div>
-            <img src="images/icons/map-pin-orange.png" className="" alt="pin" />
+
+          <button className='mapButton' onClick={() => console.log('test is working')}>            
+
+          <div className="locationContainer">
+              <div>{this.props.restaurantData.postcode}</div>
+              <FontAwesomeIcon className='icon' icon={faMapMarkerAlt} />
           </div>
+          </button>
+
+
           <div className="iconContainer">
             <div>{this.props.restaurantData.dishes.length}</div>
-            <img src="images/icons/dish-orange.png" className="" alt="dish" />
+            <FontAwesomeIcon className='icon' icon={faUtensilSpoon} />
           </div>
         </div>
 
