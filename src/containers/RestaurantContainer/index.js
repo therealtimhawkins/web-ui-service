@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
+import RestaurantHeader from '../../components/RestaurantHeader';
 import RestaurantTileList from '../RestaurantTileList';
+import MapHeader from '../../components/MapHeader';
+import Map from '../Map';
 
 class RestaurantContainer extends Component {
   state = {
@@ -10,12 +13,34 @@ class RestaurantContainer extends Component {
     this.setState({
       restaurantSelected: !this.state.restaurantSelected
     });
-    console.log(this.state.restaurantSelected);
   };
+
+  restaurantDiv = () => {
+    return (
+      <div>
+        <RestaurantHeader 
+          restaurantData={this.props.restaurantData} 
+          postcode={this.props.postcode} 
+          /> 
+        <RestaurantTileList restaurantData={this.props.restaurantData} tileClicked={this.tileClicked}/>
+      </div>
+    );
+  };
+
+  mapDiv = () => {
+    return (
+      <div>
+        <MapHeader />
+        <Map />
+      </div>
+    )
+  }
 
   render() {
     return (
-      <RestaurantTileList restaurantData={this.props.restaurantData} tileClicked={this.tileClicked}/>
+      <div>
+        { this.state.restaurantSelected ? this.mapDiv() : this.restaurantDiv() }
+      </div>
     );
   };
 };

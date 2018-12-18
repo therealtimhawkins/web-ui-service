@@ -4,7 +4,6 @@ import Header from '../Header';
 import HeroSection from '../../components/HeroSection';
 import SearchBar from '../../components/SearchBar';
 import LoadingBar from '../../components/LoadingBar';
-import RestaurantHeader from '../../components/RestaurantHeader';
 import RestaurantContainer from '../RestaurantContainer';
 import Map from '../Map';
 import './App.css';
@@ -79,11 +78,7 @@ class App extends Component {
         }
         { this.state.restaurantData ?
           <div>
-            <RestaurantHeader 
-              restaurantData={this.state.restaurantData} 
-              postcode={this.state.postcode} 
-            />
-            <RestaurantContainer restaurantData={this.state.restaurantData} /> 
+            <RestaurantContainer restaurantData={this.state.restaurantData} postcode={this.state.postcode}/> 
           </div>
           : null 
         }
