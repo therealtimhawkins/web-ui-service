@@ -30,8 +30,8 @@ class RestaurantContainer extends Component {
   mapDiv = () => {
     return (
       <div>
-        <MapHeader />
-        <Map />
+        <MapHeader tileClicked={this.tileClicked} />
+        <Map />s
       </div>
     )
   }

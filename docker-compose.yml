@@ -11,17 +11,27 @@ services:
       - '/usr/src/app/node_modules'
     ports:
       - '3000:3000'
-    environment:
-      - NODE_ENV=development
     depends_on:
       - restaurant-data-service
+    networks:
+      vegitable_net:
+        ipv4_address: 172.29.1.1
 
   restaurant-data-service:
     image: timhaydenhawkins/restaurant-data-service
     environment:
-      - CORSHEADER="http://172.28.1.1:3000"
-      - PROXY=true
+      CORSHEADER: http://localhost:3000
     ports:
       - 3001:3001
+    networks:
+      vegitable_net:
+        ipv4_address: 172.29.1.2
+
+networks:
+  vegitable_net:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.29.0.0/16
 
   
