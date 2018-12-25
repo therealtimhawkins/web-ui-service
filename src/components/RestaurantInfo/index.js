@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { faMapMarkerAlt, faUtensilSpoon, faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -22,5 +23,9 @@ const RestaurantInfo = (props) => {
   </div>
   );
 };
+
+const ConnectedRestaurantInfo = connect((state) => {
+
+})(RestaurantInfo);
 
 export default RestaurantInfo;

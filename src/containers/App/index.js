@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { saveRestaurantData } from '../../actions/restaurantDataActions';
 import axios from 'axios';
 import Header from '../Header';
 import HeroSection from '../../components/HeroSection';
@@ -47,6 +49,8 @@ class App extends Component {
       this.setState({
         restaurantData: result.data,
       });
+
+      this.props.dispatch(saveRestaurantData(result.data));
     };
   };
 
@@ -91,4 +95,4 @@ class App extends Component {
   };
 };
 
-export default App;
+export default connect()(App);
