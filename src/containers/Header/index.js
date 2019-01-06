@@ -7,12 +7,14 @@ import './Header.css';
 const Header = () => {
   return (
     <div className="header">
-      <button className="headerLogo" onClick={() => console.log('button clicked')} >
-        <Logo />
-      </button>
-      <button onClick={() => console.log('login to profile!')} className='headerProfileButton'>
-        <FontAwesomeIcon className='profileIcon' icon={faUser} />
-      </button>
+        <button  onClick={() => console.log('button clicked')} className='headerLogo'>
+          <Logo />
+        </button>
+      <div className='headerProfileButton'>
+        <button onClick={() => console.log('login to profile!')} >
+          <FontAwesomeIcon className='profileIcon' icon={faUser} />
+        </button>
+      </div>
     </div>
   );  
 };

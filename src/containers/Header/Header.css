@@ -5,11 +5,10 @@
 }
 
 .headerLogo {
-  text-align: center;
   display: inline-block;
-  width: 100%;
   margin-right: -50%;
-  padding-top: 12px;
+  padding: 12px 0 0 12px;
+
 }
 
 .headerProfileButton {
@@ -17,11 +16,12 @@
   padding: 12px 4px 0 0;
   border: none;
   background-color: #fff;
+  
 }
 
 .profileIcon {
-  width: 40px !important;
-  height: 40px;
+  width: 32px !important;
+  height: 32px;
   color: #8cbeaa;
   text-shadow: 1px 1px 1px #ccc;
 }
