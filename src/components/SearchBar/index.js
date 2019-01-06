@@ -1,4 +1,5 @@
 import React from 'react';
+import LoginButton from '../LoginButton';
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './SearchBar.css';
@@ -11,6 +12,7 @@ const SearchBar = (props) => (
     <button className="searchBarButton" onClick={props.onClick} >     
       <FontAwesomeIcon icon={faSearch} />
     </button>
+    <LoginButton />
   </div>
 );
 

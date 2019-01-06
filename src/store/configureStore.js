@@ -1,10 +1,8 @@
 import { createStore } from 'redux';
-// import countReducer from '../reducers/countReducers';
-import restaurantDataReducer from '../reducers/restaurantDataReducers';
+import { postcode } from '../reducers/index';
 
 export default () => {
-  const store = createStore(restaurantDataReducer);
-
+  const store = createStore(postcode);
   return store;
 };
 
