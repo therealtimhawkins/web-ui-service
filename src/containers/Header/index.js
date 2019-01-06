@@ -1,17 +1,18 @@
 import React from 'react';
 import Logo from '../../components/Logo';
-import ProfileButton from '../../components/ProfileButton';
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './Header.css';
 
 const Header = () => {
   return (
     <div className="header">
-      <div className="headerLogo" >
+      <button className="headerLogo" onClick={() => console.log('button clicked')} >
         <Logo />
-      </div>
-      <div className="headerProfileButton">
-        <ProfileButton  />
-      </div>
+      </button>
+      <button onClick={() => console.log('login to profile!')} className='headerProfileButton'>
+        <FontAwesomeIcon className='profileIcon' icon={faUser} />
+      </button>
     </div>
   );  
 };

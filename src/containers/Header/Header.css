@@ -15,4 +15,13 @@
 .headerProfileButton {
   float: right;
   padding: 12px 4px 0 0;
+  border: none;
+  background-color: #fff;
+}
+
+.profileIcon {
+  width: 40px !important;
+  height: 40px;
+  color: #8cbeaa;
+  text-shadow: 1px 1px 1px #ccc;
 }
