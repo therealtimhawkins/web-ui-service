@@ -2,12 +2,11 @@
   background-color: #fff;
 }
 
-.logoCarrot {
+.logoVegitable {
   height: 40px;
-  padding: 12px 4px 8px 0px;
 }
 
-.logoVegitable {
-  height: 42px;
-  padding: 16px 0px 8px 0;
+.logoButton {
+  border: none;
+  background-color: #fff;
 }

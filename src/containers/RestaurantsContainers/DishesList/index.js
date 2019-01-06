@@ -1,5 +1,5 @@
 import React from 'react';
-import DishTile from '../../components/DishTile';
+import DishTile from '../../../components/DishTile';
 import './DishList.css';
 
 const DishesList = (props) => {

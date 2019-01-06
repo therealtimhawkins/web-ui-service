@@ -4,7 +4,7 @@ import Header from '../Header';
 import HeroSection from '../../components/HeroSection';
 import SearchBar from '../../components/SearchBar';
 import LoadingBar from '../../components/LoadingBar';
-import RestaurantContainer from '../RestaurantContainer';
+import RestaurantContainer from '../RestaurantsContainers/RestaurantContainer';
 import Map from '../Map';
 import './App.css';
 

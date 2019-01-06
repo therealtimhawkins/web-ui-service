@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import DishList from '../../containers/DishesList';
+import DishList from '../../containers/RestaurantsContainers/DishesList';
 import RestaurantInfo from '../RestaurantInfo';
 import './RestaurantTile.css';
 
-class Restaurant extends Component {
+class RestaurantTile extends Component {
   state = {
     dishesVisible: false,
     veganClicked: false,
@@ -54,10 +53,4 @@ class Restaurant extends Component {
   }
 };
 
-Restaurant.propTypes = {
-  restaurantData: PropTypes.objectOf(
-    PropTypes.oneOfType(
-      [PropTypes.object, PropTypes.array, PropTypes.string, PropTypes.bool])),
-}
-
-export default Restaurant;
+export default RestaurantTile;

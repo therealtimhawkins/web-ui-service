@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import { connect } from 'react-redux';
-import RestaurantTile from '../../components/RestaurantTile';
+import RestaurantTile from '../../../components/RestaurantTile';
 import './RestaurantTileList.css';
 
 const RestaurantsList = (props) => {

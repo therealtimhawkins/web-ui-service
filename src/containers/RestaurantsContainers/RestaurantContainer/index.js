@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import RestaurantHeader from '../../components/RestaurantHeader';
+import RestaurantHeader from '../../../components/RestaurantHeader';
 import RestaurantsList from '../RestaurantsList';
-import MapHeader from '../../components/MapHeader';
-import Map from '../Map';
+import MapHeader from '../../../components/MapHeader';
+import Map from '../../Map';
 
 class RestaurantContainer extends Component {
   state = {

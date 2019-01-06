@@ -2,9 +2,9 @@ import React from 'react';
 import './Logo.css';
 
 const Logo = () => (
-  <div className="logo" >
+  <button className="logoButton" onClick={() => console.log('button clicked')} >
     <img src="images/logo/logoVegitableOrange.svg" className="logoVegitable" alt="logoVegitable" />
-  </div>
+  </button>
 );
 
 export default Logo;
