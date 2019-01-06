@@ -15,7 +15,7 @@ services:
       - restaurant-data-service
     networks:
       vegitable_net:
-        ipv4_address: 172.29.1.1
+        ipv4_address: 173.29.1.1
 
   restaurant-data-service:
     image: timhaydenhawkins/restaurant-data-service
@@ -25,13 +25,13 @@ services:
       - 3001:3001
     networks:
       vegitable_net:
-        ipv4_address: 172.29.1.2
+        ipv4_address: 173.29.1.2
 
 networks:
   vegitable_net:
     ipam:
       driver: default
       config:
-        - subnet: 172.29.0.0/16
+        - subnet: 173.29.0.0/16
 
   
