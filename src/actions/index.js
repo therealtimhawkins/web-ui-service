@@ -5,7 +5,7 @@ export const addPostcode = postcode => ({
   postcode
 });
 
-export const addRestaurantData = data => ({
+export const addRestaurantData = restaurantData => ({
   type: ADD_RESTAURANT_DATA,
-  data
+  restaurantData
 });

@@ -6,7 +6,7 @@ export const restaurantReducers = (state = {}, action) => {
     case ADD_POSTCODE:
       return action.postcode;
     case ADD_RESTAURANT_DATA:
-      return action.data;
+      return action.restaurantData;
     default:
       return state;
   }

@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import axios from 'axios';
 import Header from '../Header';
 import HeroSection from '../../components/HeroSection';
 import SearchBar from '../../components/SearchBar';
-import SearchBar2 from '../../components/SearchBar2';
 import LoadingBar from '../../components/LoadingBar';
 import RestaurantContainer from '../RestaurantContainer';
 import Map from '../Map';
@@ -43,43 +41,17 @@ class App extends Component {
     this.showHideHeroSection();
   };
 
-  getRestaurantData = async () => {
-    let result = await this.fetchDataFromRestaurantService();
-    if (result) {
-      this.setState({
-        restaurantData: result.data,
-      });
-    };
-  };
-
-  fetchDataFromRestaurantService = async () => {
-    const restaurantApiUrl = process.env.REACT_APP_RESTAURANT_API_URL;
-    try {
-      let url = `${restaurantApiUrl}${this.state.postcode}`;
-      let result = await axios.get(url);
-      console.log(result);
-      return result;
-    } catch {
-      console.log('There was an error retreiving restaurant data...');
-      return false;
-    }
-  };
-
   render() {
     return (
       <div className="App">
         <Header logoOnClick={() => this.refreshHomepage()} />
         { this.state.heroSectionVisible ? <HeroSection /> : null }
-        <SearchBar 
-          onChange={(e) => this.updatePostcodeState(e)}
-          onClick={() => this.searchButtonClicked() }
-        />
-        <SearchBar2 />
-        { !this.state.restaurantData && !this.state.heroSectionVisible ? 
+        <SearchBar />
+        { !this.props.restaurantData && !this.state.heroSectionVisible ? 
           <LoadingBar /> 
           : null
         }
-        { this.state.restaurantData ?
+        { this.props.restaurantData ?
           <div>
             <RestaurantContainer restaurantData={this.state.restaurantData} postcode={this.state.postcode}/> 
           </div>
@@ -94,4 +66,12 @@ class App extends Component {
   };
 };
 
-export default connect()(App);
+const mapStateToProps = state => ({
+  restaurantData: state.restaurantData
+});
+
+const ConnectedApp = connect(
+  mapStateToProps,
+)(App);
+
+export default ConnectedApp;

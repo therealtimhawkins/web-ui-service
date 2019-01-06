@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import RestaurantHeader from '../../components/RestaurantHeader';
-import RestaurantTileList from '../RestaurantTileList';
+import RestaurantsList from '../RestaurantsList';
 import MapHeader from '../../components/MapHeader';
 import Map from '../Map';
 
@@ -22,7 +22,7 @@ class RestaurantContainer extends Component {
           restaurantData={this.props.restaurantData} 
           postcode={this.props.postcode} 
           /> 
-        <RestaurantTileList restaurantData={this.props.restaurantData} tileClicked={this.tileClicked}/>
+        <RestaurantsList restaurantData={this.props.restaurantData} tileClicked={this.tileClicked}/>
       </div>
     );
   };

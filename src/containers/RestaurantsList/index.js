@@ -1,14 +1,14 @@
 import React, {Fragment} from 'react';
+import { connect } from 'react-redux';
 import RestaurantTile from '../../components/RestaurantTile';
 import './RestaurantTileList.css';
 
-const RestaurantList = (props) => {
+const RestaurantsList = (props) => {
   const {
-    restaurantData,
     tileClicked
   } = props;
 
-  const renderedItems = (restaurantData).map((restaurant, index) => (
+  const renderedItems = (props.restaurantData).map((restaurant, index) => (
     <Fragment key={restaurant._id}>
       <RestaurantTile restaurantData={restaurant} tileClicked={tileClicked} />
     </Fragment>
@@ -21,4 +21,14 @@ const RestaurantList = (props) => {
   );
 };
 
-export default RestaurantList;
+const mapStateToProps = state => {
+  return {
+    restaurantData: state.restaurantData
+  }
+}
+
+const ConnectedRestaurantsList = connect(
+  mapStateToProps,
+)(RestaurantsList);
+
+export default ConnectedRestaurantsList;

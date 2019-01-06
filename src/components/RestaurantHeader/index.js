@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import './RestaurantHeader.css';
 
 const RestaurantHeader = (props) => {
@@ -14,4 +15,15 @@ RestaurantHeader.propTypes = {
   postcode: PropTypes.string,
 }
 
-export default RestaurantHeader;
+const mapStateToProps = state => {
+  return {
+    restaurantData: state.restaurantData,
+    postcode: state.postcode
+  }
+}
+
+const ConnectedRestaurantHeader = connect(
+  mapStateToProps,
+)(RestaurantHeader)
+
+export default ConnectedRestaurantHeader;
