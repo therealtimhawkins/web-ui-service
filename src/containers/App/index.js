@@ -5,6 +5,7 @@ import HeroSection from '../../components/HeroSection';
 import SearchBar from '../../components/SearchBar';
 import LoadingBar from '../../components/LoadingBar';
 import RestaurantContainer from '../RestaurantsContainers/RestaurantContainer';
+import RegistrationForm from '../UserContainers/RegistrationForm';
 import Map from '../Map';
 import './App.css';
 
@@ -57,9 +58,9 @@ class App extends Component {
           </div>
           : null 
         }
-        { this.state.heroSectionVisible ? 
+        { this.props.view !== 'registrationForm' ? 
           <Map /> 
-          : null
+          : <RegistrationForm />
         }
       </div>
     );
@@ -67,7 +68,8 @@ class App extends Component {
 };
 
 const mapStateToProps = state => ({
-  restaurantData: state.restaurantData
+  restaurantData: state.restaurantData,
+  view: state.view
 });
 
 const ConnectedApp = connect(
