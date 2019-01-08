@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 class RegistrationForm extends React.Component {
   state = {
@@ -13,7 +14,23 @@ class RegistrationForm extends React.Component {
     this.setState({
       [param]: e.target.value
     });
-    console.log(this.state);
+  }
+
+  registerUser = () => {
+    axios.post('http://localhost:3002/api/users/register/', {
+      firstname: this.state.firstName,
+      lastname: this.state.lastName,
+      email: this.state.email,
+      password: this.state.password
+    })
+    .then(function (response) {
+      this.setState({
+        response
+      })
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
 
   render() {
@@ -27,6 +44,10 @@ class RegistrationForm extends React.Component {
           onChange={this.updateStateParameter}></input>
         <input className="password" type="text" placeholder="password" 
           onChange={this.updateStateParameter}></input>
+        <button onClick={this.registerUser} >Register!</button>
+        <div>
+          {this.state.response}
+        </div>
       </div>
     )
   }

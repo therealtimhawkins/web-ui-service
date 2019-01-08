@@ -36,6 +36,8 @@ services:
 
   user-data-service:
     image: timhaydenhawkins/user-data-service
+    environment:
+      CORSHEADER: http://localhost:3000
     ports: 
       - 3002:3002
     restart: always
