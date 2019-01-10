@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import './RegistrationForm.css';
 
 class RegistrationForm extends React.Component {
   state = {
@@ -35,16 +36,18 @@ class RegistrationForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <input className="firstName" type="text" placeholder="first name" 
+      <div className="formContainer">
+        <div className="formTitle">
+        </div>
+        <input className="firstName" type="text" placeholder="First Name" 
           onChange={this.updateStateParameter}></input>
-        <input className="lastName" type="text" placeholder="last name" 
+        <input className="lastName" type="text" placeholder="Last Name" 
           onChange={this.updateStateParameter}></input>
-        <input className="email" type="text" placeholder="email" 
+        <input className="email" type="text" placeholder="Email" 
           onChange={this.updateStateParameter}></input>
-        <input className="password" type="text" placeholder="password" 
+        <input className="password" type="text" placeholder="Password" 
           onChange={this.updateStateParameter}></input>
-        <button onClick={this.registerUser} >Register!</button>
+        <button onClick={this.registerUser} >Register</button>
         <div>
           {this.state.response}
         </div>

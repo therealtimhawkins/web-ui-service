@@ -1,0 +1,36 @@
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+
+.formContainer input {
+  height: 48px;
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 8px;
+  padding: 0 0 0 8px;
+  font-size: 16px;
+  border-width: 1px;
+  border-color: lightgray;
+  border-radius: 4px;
+  box-shadow: none;
+}
+
+.formContainer button {
+  height: 48px;
+  width: 410px;
+  margin: 0 auto;
+  margin-top: 8px;
+  font-size: larger;
+  border: 1px;
+  border-radius: 4px; 
+  background-color: #8cbeaa;
+  color: #fff;
+}
+
+.formTitle {
+  height: 96px;
+}
