@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import LoginForm from '../LoginForm';
+import LogoutForm from '../LogoutForm';
 import './RegistrationForm.css';
 
 class RegistrationForm extends React.Component {
@@ -24,8 +25,14 @@ class RegistrationForm extends React.Component {
   }
 
   registerUser = async () => {
-    let registerResponse = await this.fetchRegisterResponse();
-    this.setRegisterResponse(registerResponse);
+    if (this.state.name || this.state.email || this.state.password) {
+      let registerResponse = await this.fetchRegisterResponse();
+      this.setRegisterResponse(registerResponse);
+    } else {
+      this.setState({
+        response: 'Please fill in all of the user fields'
+      })
+    }
   }
 
   fetchRegisterResponse = async () => {
@@ -56,6 +63,7 @@ class RegistrationForm extends React.Component {
         <button onClick={this.registerUser} >Register</button>
         <div>Response: {this.state.response}</div>
         <LoginForm />
+        <LogoutForm />
       </div>
     )
   }
