@@ -17,23 +17,30 @@ class RegistrationForm extends React.Component {
     });
   }
 
-  registerUser = () => {
-    const userDataServiceUrl = process.env.REACT_APP_USER_DATA_API_URL + 'register/';
-
-    axios.post(userDataServiceUrl, {
-      name: this.state.name,
-      email: this.state.email,
-      password: this.state.password
-    })
-    .then(function (response) {
-      this.setState({
-        response
-      })
-    })
-    .catch(function (error) {
-      console.log(error);
+  setRegisterResponse = (response) => {
+    this.setState({
+      response: response.data.message,
     });
   }
+
+  registerUser = async () => {
+    let registerResponse = await this.fetchRegisterResponse();
+    this.setRegisterResponse(registerResponse);
+  }
+
+  fetchRegisterResponse = async () => {
+    const userDataServiceUrl = process.env.REACT_APP_USER_DATA_API_URL + 'register';
+    try {
+      let result = await axios.post(userDataServiceUrl, {
+        email: this.state.email,
+        password: this.state.password
+      })
+      return result;
+    } catch {
+      console.log('There was an error retreiving log in authorisation.');
+      return false;
+    }
+  };
 
   render() {
     return (
@@ -47,6 +54,7 @@ class RegistrationForm extends React.Component {
         <input className="password" type="text" placeholder="Password" 
           onChange={this.updateStateParameter}></input>
         <button onClick={this.registerUser} >Register</button>
+        <div>Response: {this.state.response}</div>
         <LoginForm />
       </div>
     )

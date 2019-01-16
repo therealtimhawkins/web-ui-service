@@ -14,22 +14,30 @@ class LoginForm extends React.Component {
     });
   }
 
-  loginUser = () => {
-    const userDataServiceUrl = process.env.REACT_APP_USER_DATA_API_URL + 'login';
-
-    axios.post(userDataServiceUrl, {
-      email: this.state.email,
-      password: this.state.password
+  setLoginResponse = (response) => {
+    this.setState({
+      response: response.data.message,
     })
-    .then(function (response) {
-      this.setState({
-        response
-      });
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
   }
+
+  loginUser = async () => {
+    let loginResponse = await this.fetchLoginResponse();
+    this.setLoginResponse(loginResponse);
+  }
+
+  fetchLoginResponse = async () => {
+    const userDataServiceUrl = process.env.REACT_APP_USER_DATA_API_URL + 'login';
+    try {
+      let result = await axios.post(userDataServiceUrl, {
+        email: this.state.email,
+        password: this.state.password
+      })
+      return result;
+    } catch {
+      console.log('There was an error retreiving log in authorisation.');
+      return false;
+    }
+  };
 
   render() {
     return (
@@ -39,6 +47,7 @@ class LoginForm extends React.Component {
         <input className="password" type="text" placeholder="Password" 
           onChange={this.updateStateParameter}></input>
         <button onClick={this.loginUser} >Log In</button>
+        <div>Response: {this.state.response}</div>
       </div>
     )
   }
