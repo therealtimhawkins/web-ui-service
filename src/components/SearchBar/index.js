@@ -35,7 +35,7 @@ class SearchBar extends React.Component {
   render() {
     return (
       <div className="searchBar">
-        <input className="searchBarInput" type="text" placeholder="e.g. E14 7DX" 
+        <input className="searchBarInput" type="text" placeholder="E14 7DX" 
           onChange={this.updatePostcodeState}></input>
         <button className="searchBarButton" onClick={this.getRestaurantData} >     
           <FontAwesomeIcon icon={faSearch} />

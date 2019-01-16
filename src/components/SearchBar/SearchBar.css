@@ -6,19 +6,20 @@
 }
 
 .searchBarInput {
-  padding: 16px 10px 16px 10px;
   font-size: 16px;
   text-transform: uppercase;
   border: none;
-  border-radius: 2px;
-  width: 54%;
+  border-radius: 4px;
+  height: 48px;
+  width: 360px;
+  padding: 0 0 0 8px;
 }
 
 .searchBarButton {
   border: none;
   background: none;
   text-decoration: none;
-  border-radius: 2px;
+  border-radius: 4px;
   font-family: 'Hind', sans-serif; 
   font-weight: 600;
   font-size: 16px;

@@ -1,4 +1,6 @@
 .restaurantList {
   text-align: center;
   background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
 }

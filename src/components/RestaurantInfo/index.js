@@ -3,10 +3,15 @@ import { faMapMarkerAlt, faUtensilSpoon, faStar } from "@fortawesome/free-solid-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const RestaurantInfo = (props) => {
+  const calculateRating = (ratingArray) => {
+    return ratingArray;
+
+  }
+
   return (
     <div className="ratingContainer">
     <div className="iconContainer" >
-      <div>{props.restaurantData.rating}</div>
+      <div>{calculateRating(props.restaurantData.rating)}</div>
       <FontAwesomeIcon className='icon' icon={faStar} />
     </div>
     <button className='mapButton' onClick={() => props.tileClicked()}>            
