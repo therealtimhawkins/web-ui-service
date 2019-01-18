@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Header from '../Header';
 import SearchBar from '../../components/SearchBar';

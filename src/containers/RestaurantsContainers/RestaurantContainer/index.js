@@ -22,11 +22,8 @@ class RestaurantContainer extends Component {
       <div>
         { this.props.restaurantData ? 
         <div>
-          <RestaurantHeader 
-            restaurantData={this.props.restaurantData} 
-            postcode={this.props.postcode} 
-            /> 
-          <RestaurantsList restaurantData={this.props.restaurantData} tileClicked={this.tileClicked}/>
+          <RestaurantHeader /> 
+          <RestaurantsList tileClicked={this.tileClicked}/>
         </div>
         :
         <LoadingBar />
@@ -39,7 +36,7 @@ class RestaurantContainer extends Component {
     return (
       <div>
         <MapHeader tileClicked={this.tileClicked} />
-        <Map />s
+        <Map />
       </div>
     )
   }
