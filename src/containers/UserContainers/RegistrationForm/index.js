@@ -39,6 +39,7 @@ class RegistrationForm extends React.Component {
     const userDataServiceUrl = process.env.REACT_APP_USER_DATA_API_URL + 'register';
     try {
       let result = await axios.post(userDataServiceUrl, {
+        name: this.state.name,
         email: this.state.email,
         password: this.state.password
       })
