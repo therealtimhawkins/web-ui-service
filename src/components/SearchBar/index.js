@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
   import { connect } from 'react-redux';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { addPostcode, addRestaurantData } from '../../actions';
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

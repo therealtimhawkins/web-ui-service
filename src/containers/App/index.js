@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, Link } from 'react-router-dom';
+import { Router, Route } from 'react-router-dom';
 import history from '../../history';
 import Header from '../Header';
 import SearchBar from '../../components/SearchBar';
