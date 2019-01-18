@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import { connect } from 'react-redux';
+  import { connect } from 'react-redux';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { addPostcode, addRestaurantData } from '../../actions';
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -37,9 +38,9 @@ class SearchBar extends React.Component {
       <div className="searchBar">
         <input className="searchBarInput" type="text" placeholder="E14 7DX" 
           onChange={this.updatePostcodeState}></input>
-        <button className="searchBarButton" onClick={this.getRestaurantData} >     
+        <Link to='/restaurants' className="searchBarButton" onClick={this.getRestaurantData} >     
           <FontAwesomeIcon icon={faSearch} />
-        </button>
+        </Link>
       </div>
     )
   }

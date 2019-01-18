@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 import RestaurantHeader from '../../../components/RestaurantHeader';
 import RestaurantsList from '../RestaurantsList';
+import LoadingBar from '../../../components/LoadingBar';
 import MapHeader from '../../../components/MapHeader';
 import Map from '../../Map';
 
@@ -18,11 +20,17 @@ class RestaurantContainer extends Component {
   restaurantDiv = () => {
     return (
       <div>
-        <RestaurantHeader 
-          restaurantData={this.props.restaurantData} 
-          postcode={this.props.postcode} 
-          /> 
-        <RestaurantsList restaurantData={this.props.restaurantData} tileClicked={this.tileClicked}/>
+        { this.props.restaurantData ? 
+        <div>
+          <RestaurantHeader 
+            restaurantData={this.props.restaurantData} 
+            postcode={this.props.postcode} 
+            /> 
+          <RestaurantsList restaurantData={this.props.restaurantData} tileClicked={this.tileClicked}/>
+        </div>
+        :
+        <LoadingBar />
+        }
       </div>
     );
   };
@@ -45,4 +53,13 @@ class RestaurantContainer extends Component {
   };
 };
 
-export default RestaurantContainer;
+const mapStateToProps = state => ({
+  postcode: state.postcode,
+  restaurantData: state.restaurantData,
+});
+
+const ConnectedRestaurantContainer = connect(
+  mapStateToProps,
+)(RestaurantContainer);
+
+export default ConnectedRestaurantContainer;
