@@ -18,7 +18,7 @@ const App = () => {
             <RestaurantContainer /> 
           )} 
         />
-        <Route path='/user' component={RegistrationForm} />
+        <Route path='/user/registration' component={RegistrationForm} />
       </div>
     </Router>
   );

@@ -11,7 +11,7 @@ const Header = (props) => {
         <Link  to='/' className='headerLogoButton'>
           <Logo />
         </Link>
-        <Link to='/user' className='headerProfileButton' >
+        <Link to='/user/registration' className='headerProfileButton' >
           <FontAwesomeIcon className='profileIcon' icon={faUser} />
         </Link>
       </div>
