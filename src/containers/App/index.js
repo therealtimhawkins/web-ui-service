@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Header from '../Header';
 import HeroSection from '../../components/HeroSection';
 import SearchBar from '../../components/SearchBar';
@@ -44,25 +45,28 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Header logoOnClick={() => this.refreshHomepage()} />
-        { this.state.heroSectionVisible ? <HeroSection /> : null }
-        <SearchBar />
-        { !this.props.restaurantData && !this.state.heroSectionVisible ? 
-          <LoadingBar /> 
-          : null
-        }
-        { this.props.restaurantData ?
-          <div>
-            <RestaurantContainer restaurantData={this.state.restaurantData} postcode={this.state.postcode}/> 
-          </div>
-          : null 
-        }
-        { this.props.view !== 'registrationForm' ? 
-          <Map /> 
-          : <RegistrationForm />
-        }
-      </div>
+      <Router>
+        <div className="App">
+          <Header logoOnClick={() => this.refreshHomepage()} />
+          { this.state.heroSectionVisible ? <HeroSection /> : null }
+          <SearchBar />
+          { !this.props.restaurantData && !this.state.heroSectionVisible ? 
+            <LoadingBar /> 
+            : null
+          }
+          { this.props.restaurantData ?
+            <div>
+              <RestaurantContainer restaurantData={this.state.restaurantData} postcode={this.state.postcode}/> 
+            </div>
+            : null 
+          }
+          {/* { this.props.view !== 'registrationForm' ? 
+            <Map /> 
+            : <RegistrationForm />
+          } */}
+          <Route path='/user' component={RegistrationForm} />
+        </div>
+      </Router>
     );
   };
 };
