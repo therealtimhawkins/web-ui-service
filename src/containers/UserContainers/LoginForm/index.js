@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
+import history from '../../../history';
 
-class LoginForm extends React.Component {
+class LoginForm extends Component {
   state = {
     email: '',
     password: ''
@@ -14,15 +15,21 @@ class LoginForm extends React.Component {
     });
   }
 
-  setLoginResponse = (response) => {
-    this.setState({
-      response: response.data.message,
-    })
-  }
-
   loginUser = async () => {
-    let loginResponse = await this.fetchLoginResponse();
-    this.setLoginResponse(loginResponse);
+    if (!this.state.email || !this.state.password) {
+      this.setState({
+        response: 'Please fill in your email and password.'
+      });
+    } else {
+      let loginResponse = await this.fetchLoginResponse();
+      if (loginResponse) {
+        history.push('/user/profile');
+      } else {
+        this.setState({
+          response: 'User could not be authorised.',
+        })
+      }
+    }
   }
 
   fetchLoginResponse = async () => {
@@ -31,10 +38,9 @@ class LoginForm extends React.Component {
       let result = await axios.post(userDataServiceUrl, {
         email: this.state.email,
         password: this.state.password
-      })
+      });
       return result;
     } catch {
-      console.log('There was an error retreiving log in authorisation.');
       return false;
     }
   };
