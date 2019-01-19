@@ -1,13 +1,26 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import LogoutForm from '../LogoutForm';
 
-const UserProfile = () => {
+const UserProfile = (props) => {
   return (
     <div>
-      UserProfile
+      <h2>{props.user.name}</h2>
+      <h2>{props.user.email}</h2>
       <LogoutForm />
     </div>
   )
 }
 
-export default UserProfile;
+const mapStateToProps = state => ({
+  user: state.user
+});
+
+const mapDispatchToProps = {};
+
+const ConnectedUserProfile = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(UserProfile);
+
+export default ConnectedUserProfile;
