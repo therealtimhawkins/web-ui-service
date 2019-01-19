@@ -1,8 +1,8 @@
 import React from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import { addCurrentUser } from '../../../actions';
 import { routeToUserProfile } from '../../../routes/routes';
-import LoginForm from '../LoginForm';
-import LogoutForm from '../LogoutForm';
 import './RegistrationForm.css';
 
 class RegistrationForm extends React.Component {
@@ -23,6 +23,14 @@ class RegistrationForm extends React.Component {
     if (this.state.name || this.state.email || this.state.password) {
       let registerResponse = await this.fetchRegisterResponse();
       if (registerResponse) {
+        console.log(registerResponse);
+
+        const currentUser = {
+          name: registerResponse.data.user.name,
+          email: registerResponse.data.user.email,
+          token: registerResponse.data.token,
+        }
+        this.props.addCurrentUser({ user: currentUser });
         routeToUserProfile();
       } else {
         this.setState({
@@ -64,11 +72,21 @@ class RegistrationForm extends React.Component {
           onChange={this.updateStateParameter}></input>
         <button onClick={this.registerUser} >Register</button>
         <div>Response: {this.state.response}</div>
-        <LoginForm />
-        <LogoutForm />
       </div>
     )
   }
 }
 
-export default RegistrationForm;
+const mapStateToProps = state => ({
+});
+
+const mapDispatchToProps = {
+  addCurrentUser,
+}
+
+const ConnectedRegistrationForm = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(RegistrationForm);
+
+export default ConnectedRegistrationForm;

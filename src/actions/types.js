@@ -1,3 +1,3 @@
 export const ADD_POSTCODE = 'ADD_POSTCODE';
 export const ADD_RESTAURANT_DATA = 'ADD_RESTAURANT_DATA';
-export const SET_VIEW_TO = 'SET_VIEW_TO';
+export const ADD_CURRENT_USER = 'ADD_CURRENT_USER';

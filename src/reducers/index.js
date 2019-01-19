@@ -1,4 +1,4 @@
-import { ADD_POSTCODE, ADD_RESTAURANT_DATA, SET_VIEW_TO } from '../actions/types';
+import { ADD_POSTCODE, ADD_RESTAURANT_DATA, ADD_CURRENT_USER } from '../actions/types';
 import { combineReducers } from 'redux';
 
 export const restaurantReducers = (state = {}, action) => {
@@ -7,8 +7,8 @@ export const restaurantReducers = (state = {}, action) => {
       return action.postcode;
     case ADD_RESTAURANT_DATA:
       return action.restaurantData;
-    case SET_VIEW_TO:
-      return action.view;
+    case ADD_CURRENT_USER:
+      return action.user;
     default:
       return state;
   }
