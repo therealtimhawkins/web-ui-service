@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import { routeToUserProfile } from '../../../routes/routes';
 
 class LoginForm extends Component {
@@ -54,6 +55,7 @@ class LoginForm extends Component {
           onChange={this.updateStateParameter}></input>
         <button onClick={this.loginUser} >Log In</button>
         <div>Response: {this.state.response}</div>
+        <Link to='/user/registration' >Don't have an account?</Link>
       </div>
     )
   }

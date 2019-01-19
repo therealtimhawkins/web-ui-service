@@ -73,7 +73,7 @@ class RegistrationForm extends React.Component {
           onChange={this.updateStateParameter}></input>
         <button onClick={this.registerUser} >Register</button>
         <div>Response: {this.state.response}</div>
-        <Link to='/user/login' >Have an account? Log in.</Link>
+        <Link to='/user/login' >Have an account?</Link>
       </div>
     )
   }
