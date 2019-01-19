@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
 
 class LogoutForm extends React.Component {
   state = {}
@@ -32,4 +33,17 @@ class LogoutForm extends React.Component {
   }
 }
 
-export default LogoutForm;
+const mapStateToProps = state => {
+
+}
+
+const mapDispatchToProps = {
+
+}
+
+const ConnectedLogoutForm = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LogoutForm);
+
+export default ConnectedLogoutForm;

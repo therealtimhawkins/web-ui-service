@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { addCurrentUser } from '../../../actions';
 import { routeToUserProfile } from '../../../routes/routes';
 import './RegistrationForm.css';
@@ -72,6 +73,7 @@ class RegistrationForm extends React.Component {
           onChange={this.updateStateParameter}></input>
         <button onClick={this.registerUser} >Register</button>
         <div>Response: {this.state.response}</div>
+        <Link to='/user/login' >Have an account? Log in.</Link>
       </div>
     )
   }
