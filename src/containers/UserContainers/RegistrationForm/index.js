@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { routeToUserProfile } from '../../../routes/routes';
 import LoginForm from '../LoginForm';
 import LogoutForm from '../LogoutForm';
 import './RegistrationForm.css';
@@ -18,16 +19,16 @@ class RegistrationForm extends React.Component {
     });
   }
 
-  setRegisterResponse = (response) => {
-    this.setState({
-      response: response.data.message,
-    });
-  }
-
   registerUser = async () => {
     if (this.state.name || this.state.email || this.state.password) {
       let registerResponse = await this.fetchRegisterResponse();
-      this.setRegisterResponse(registerResponse);
+      if (registerResponse) {
+        routeToUserProfile();
+      } else {
+        this.setState({
+          response: 'User could not be authorised.',
+        });
+      }
     } else {
       this.setState({
         response: 'Please fill in all of the user fields'

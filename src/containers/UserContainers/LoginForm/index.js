@@ -27,7 +27,7 @@ class LoginForm extends Component {
       } else {
         this.setState({
           response: 'User could not be authorised.',
-        })
+        });
       }
     }
   }
