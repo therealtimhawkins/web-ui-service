@@ -4,3 +4,6 @@ export const routeToUserProfile = () => {
   history.push('/user/profile');
 }
 
+export const routeToHomePage = () => {
+  history.push('/');
+}

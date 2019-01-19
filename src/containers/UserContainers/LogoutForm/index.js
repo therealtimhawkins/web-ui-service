@@ -1,11 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { routeToHomePage } from '../../../routes/routes';
 import { addCurrentUser } from '../../../actions';
 
 class LogoutForm extends React.Component {
   
   logout = () => {
     this.props.addCurrentUser({ user: null });
+    routeToHomePage();
   }
 
   render() {
