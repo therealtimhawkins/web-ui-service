@@ -24,8 +24,7 @@ class RegistrationForm extends React.Component {
     if (this.state.name || this.state.email || this.state.password) {
       let registerResponse = await this.fetchRegisterResponse();
       if (registerResponse) {
-        console.log(registerResponse);
-
+        
         const currentUser = {
           name: registerResponse.data.user.name,
           email: registerResponse.data.user.email,
@@ -33,6 +32,7 @@ class RegistrationForm extends React.Component {
         }
         this.props.addCurrentUser({ user: currentUser });
         routeToUserProfile();
+
       } else {
         this.setState({
           response: 'User could not be authorised.',

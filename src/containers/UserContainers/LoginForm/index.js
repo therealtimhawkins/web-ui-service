@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { addCurrentUser } from '../../../actions';
 import { routeToUserProfile } from '../../../routes/routes';
 
 class LoginForm extends Component {
@@ -24,6 +26,14 @@ class LoginForm extends Component {
     } else {
       let loginResponse = await this.fetchLoginResponse();
       if (loginResponse) {
+
+        const currentUser = {
+          name: loginResponse.data.user.name,
+          email: loginResponse.data.user.email,
+          token: loginResponse.data.token,
+        }
+
+        this.props.addCurrentUser({ user: currentUser });
         routeToUserProfile();
       } else {
         this.setState({
@@ -61,4 +71,16 @@ class LoginForm extends Component {
   }
 }
 
-export default LoginForm;
+const mapStateToProps = state => ({
+});
+
+const mapDispatchToProps = {
+  addCurrentUser,
+}
+
+const ConnectedLoginForm = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(LoginForm);
+
+export default ConnectedLoginForm;
