@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import history from '../../../history';
+import { routeToUserProfile } from '../../../routes/routes';
 
 class LoginForm extends Component {
   state = {
@@ -23,7 +23,7 @@ class LoginForm extends Component {
     } else {
       let loginResponse = await this.fetchLoginResponse();
       if (loginResponse) {
-        history.push('/user/profile');
+        routeToUserProfile();
       } else {
         this.setState({
           response: 'User could not be authorised.',
