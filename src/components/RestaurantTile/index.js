@@ -27,19 +27,22 @@ class RestaurantTile extends Component {
   };
 
   saveButtonClicked = async () => {
+    console.log('Save Restaurant Button Clicked.')
     let auth = await this.authUser();
     if (auth) {
       let result = await this.saveRestaurant();
       console.log(result);
+    } else {
+      console.log('JWT token has expired!');
     }
-    console.log(auth);
   }
 
   authUser = async () => {
     const apiAuthEndpoint = process.env.REACT_APP_USER_DATA_API_URL + 'auth';
     try {
       let result = await axios.get(apiAuthEndpoint, { headers: { 'x-access-token': this.props.user.token }});
-      return result;
+      console.log(`Result of authentication: ${result.data.auth}`)
+      return result.data.auth;
     } catch {
       return null;
     }
@@ -50,12 +53,10 @@ class RestaurantTile extends Component {
     try {
       let result = axios.post(apiSaveRestaurantEndpoint, {
         userEmail: this.props.user.email,
-        restaurants: [
-          {
-            name: this.props.restaurantData.name,
-            postcode: this.props.restaurantData.postcode
-          }
-        ]
+        restaurant: {
+          name: this.props.restaurantData.name,
+          postcode: this.props.restaurantData.postcode
+        }
       });
       return result;
     } catch {
