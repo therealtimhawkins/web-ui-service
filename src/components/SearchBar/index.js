@@ -10,14 +10,14 @@ import './SearchBar.css';
 class SearchBar extends React.Component {
 
   updatePostcodeState = (event) => {
-    this.props.addPostcode({ postcode: event.target.value })
+    this.props.addPostcode(event.target.value)
   };
 
   getRestaurantData = async () => {
     let result = await this.fetchDataFromRestaurantService();
     console.log(result);
     if (result) {
-      this.props.addRestaurantData({ restaurantData: result.data })
+      this.props.addRestaurantData(result.data)
     };
   };
 

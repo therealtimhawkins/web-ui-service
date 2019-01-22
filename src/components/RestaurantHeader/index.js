@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import './RestaurantHeader.css';
 
@@ -10,10 +9,6 @@ const RestaurantHeader = (props) => {
     </div>
   );
 };
-
-RestaurantHeader.propTypes = {
-  postcode: PropTypes.string,
-}
 
 const mapStateToProps = state => {
   return {

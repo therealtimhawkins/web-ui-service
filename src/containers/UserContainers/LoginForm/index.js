@@ -33,7 +33,7 @@ class LoginForm extends Component {
           token: loginResponse.data.token,
         }
 
-        this.props.addCurrentUser({ user: currentUser });
+        this.props.addCurrentUser(currentUser);
         routeToUserProfile();
       } else {
         this.setState({

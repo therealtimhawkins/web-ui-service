@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import DishList from '../../containers/RestaurantsContainers/DishesList';
 import RestaurantInfo from '../RestaurantInfo';
 import './RestaurantTile.css';
@@ -28,6 +29,10 @@ class RestaurantTile extends Component {
     return (
       <div className="restaurant">
         <div className="restaurantName" >{this.props.restaurantData.name}</div>
+        { this.props.user ? 
+          <button onClick={() => console.log('button working')}>Save</button> 
+          : null
+        }
 
         <RestaurantInfo restaurantData={this.props.restaurantData} tileClicked={this.props.tileClicked}/>
 
@@ -53,4 +58,15 @@ class RestaurantTile extends Component {
   }
 };
 
-export default RestaurantTile;
+const mapStateToProps = state => ({
+  user: state.user
+});
+
+const mapDispatchToProps = {};
+
+const ConnectedRestaurantTile = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(RestaurantTile);
+
+export default ConnectedRestaurantTile;

@@ -1,19 +1,28 @@
 import { ADD_POSTCODE, ADD_RESTAURANT_DATA, ADD_CURRENT_USER } from '../actions/types';
-import { combineReducers } from 'redux';
 
-export const restaurantReducers = (state = {}, action) => {
+const initialState = [
+]
+
+export const restaurantReducers = (state = initialState, action) => {
   switch (action.type) {
     case ADD_POSTCODE:
-      return action.postcode;
+    console.log(state);
+      return Object.assign({}, state, {
+        postcode: action.postcode
+      });
     case ADD_RESTAURANT_DATA:
-      return action.restaurantData;
+    console.log(state);
+      return Object.assign({}, state, {
+        restaurantData: action.restaurantData
+      });
     case ADD_CURRENT_USER:
-      return action.user;
+    console.log(state);
+      return Object.assign({}, state, {
+        user: action.user
+      });
     default:
       return state;
   }
 }
 
-export const reducers = combineReducers({
-  restaurantReducers,
-})
+export default restaurantReducers;
