@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { addSavedRestaurantData } from '../../actions';
 import axios from 'axios';
 import Popup from 'reactjs-popup';
 import DishList from '../../containers/RestaurantsContainers/DishesList';
@@ -49,6 +50,11 @@ class RestaurantTile extends Component {
       console.log(`Result\n ---> ${result.status}`);
       if (result.status === 200) {
         this.openPopup();
+        this.props.savedRestaurantData.push({
+          name: this.props.restaurantData.name,
+          postcode: this.props.restaurantData.postcode
+        });
+        this.props.addSavedRestaurantData(this.props.savedRestaurantData);
       }
       if (result.status === 409) {
         console.log('Restaurant already exits in saved restaurants.')
@@ -127,10 +133,13 @@ class RestaurantTile extends Component {
 };
 
 const mapStateToProps = state => ({
-  user: state.user
+  user: state.user,
+  savedRestaurantData: state.savedRestaurantData
 });
 
-const mapDispatchToProps = {};
+const mapDispatchToProps = {
+  addSavedRestaurantData
+};
 
 const ConnectedRestaurantTile = connect(
   mapStateToProps,

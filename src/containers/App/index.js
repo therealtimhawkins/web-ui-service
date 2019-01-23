@@ -37,7 +37,7 @@ const App = (props) => {
 };
 
 const mapStateToProps = state => ({
-  user: state.user
+  user: state.user,
 });
 
 const mapDispatchToProps = {
