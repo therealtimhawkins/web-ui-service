@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
+import Popup from 'reactjs-popup';
 import DishList from '../../containers/RestaurantsContainers/DishesList';
 import RestaurantInfo from '../RestaurantInfo';
 import './RestaurantTile.css';
@@ -10,6 +11,7 @@ class RestaurantTile extends Component {
     dishesVisible: false,
     veganClicked: false,
     vegetarianClicked: false,
+    popupOpen: false,
   };
 
   veganButtonClicked = () => {
@@ -26,12 +28,28 @@ class RestaurantTile extends Component {
     console.log(this.state.vegetarianClicked);
   };
 
+  openPopup = () => {
+    this.setState({
+      popupOpen: true
+    });
+  }
+
+  closePopup = () => {
+    this.setState({
+      popupOpen: false
+    });
+  }
+
   saveButtonClicked = async () => {
     console.log('Save Restaurant Button Clicked.')
     let auth = await this.authUser();
+    console.log(`Auth\n ---> ${auth}`);
     if (auth) {
       let result = await this.saveRestaurant();
-      console.log(result);
+      console.log(`Result\n ---> ${result.status}`);
+      if (result.status === 200) {
+        this.openPopup();
+      }
     } else {
       console.log('JWT token has expired!');
     }
@@ -72,6 +90,14 @@ class RestaurantTile extends Component {
           <button onClick={this.saveButtonClicked}>Save</button> 
           : null
         }
+
+        <Popup
+          open={this.state.popupOpen}
+          closeOnDocumentClick
+          onClose={this.closePopup}
+        >
+          <span> Restaurant was saved to favourites! </span>
+       </Popup>
 
         <RestaurantInfo restaurantData={this.props.restaurantData} tileClicked={this.props.tileClicked}/>
 
