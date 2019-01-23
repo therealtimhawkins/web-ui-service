@@ -50,6 +50,9 @@ class RestaurantTile extends Component {
       if (result.status === 200) {
         this.openPopup();
       }
+      if (result.status === 409) {
+        console.log('Restaurant already exits in saved restaurants.')
+      }
     } else {
       console.log('JWT token has expired!');
     }
