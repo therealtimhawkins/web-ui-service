@@ -1,0 +1,8 @@
+{
+  "name": "web-ui-service-client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "reactjs-popup": "^1.3.2"
+  }
+}
