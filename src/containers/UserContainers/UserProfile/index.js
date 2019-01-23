@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
+import SavedRestaurantList from '../../RestaurantsContainers/SavedRestaurantsList';
 import LogoutForm from '../LogoutForm';
 import { addSavedRestaurantData } from '../../../actions';
 
@@ -46,6 +47,10 @@ class UserProfile extends Component {
       <div>
         <h2>{this.props.user.name}</h2>
         <h2>{this.props.user.email}</h2>
+        { this.props.savedRestaurantData ? 
+          <SavedRestaurantList /> :
+          null
+        }
         <LogoutForm />
       </div>
     );
@@ -53,7 +58,8 @@ class UserProfile extends Component {
 }
 
 const mapStateToProps = state => ({
-  user: state.user
+  user: state.user,
+  savedRestaurantData: state.savedRestaurantData,
 });
 
 const mapDispatchToProps = {
