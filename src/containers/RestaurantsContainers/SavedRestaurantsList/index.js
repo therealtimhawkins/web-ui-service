@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 const SavedRestaurantList = (props) => {
 
   const renderedItems = props.savedRestaurantData.map((restaurant, index) => (
-    <div>
+    <div key={index}>
       <h4>{restaurant.name}</h4>
       <h4>{restaurant.postcode}</h4>
     </div>
