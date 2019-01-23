@@ -6,7 +6,7 @@ import { addCurrentUser } from '../../../actions';
 class LogoutForm extends React.Component {
   
   logout = () => {
-    this.props.addCurrentUser({ user: null });
+    this.props.addCurrentUser(null);
     routeToHomePage();
   }
 
